@@ -1,15 +1,17 @@
 'use client';
 
-import { SignInButton, SignOutButton, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 import { useUser } from '@clerk/nextjs';
+import ButtonSignIn from './buttons/ButtonSignIn';
+import ButtonSignOut from './buttons/ButtonSignOut';
 
 export const NavBar: FunctionComponent = () => {
   const user = useUser();
+  // TODO: Hold user/useUser() in a client component so the nav can be a server component
 
   return (
-    <nav className='bg-white border-gray-200 dark:bg-gray-900'>
+    <nav className='bg-white dark:bg-gray-900 border-b-2 border-gray-800'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <Link href='/' className='flex items-center'>
           <img
@@ -43,32 +45,23 @@ export const NavBar: FunctionComponent = () => {
             ></path>
           </svg>
         </button>
-        <div className='hidden w-full md:block md:w-auto' id='navbar-default'>
+        <div className='hidden w-full md:block md:w-auto'>
           <ul className='font-medium flex items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
             <li className='text-gray-100 hover:text-gray-300/75'>
               <Link href='/generate'>Generate</Link>
             </li>
             <li className='text-gray-100 hover:text-gray-300/75'>
-              <Link href=''>Pricing</Link>
+              <Link href='/examples'>Examples</Link>
             </li>
             <li className='text-gray-100 hover:text-gray-300/75'>
-              <Link href=''>Account</Link>
+              <Link href='/pricing'>Pricing</Link>
+            </li>
+            <li className='text-gray-100 hover:text-gray-300/75'>
+              <Link href='/account'>Account</Link>
             </li>
             <li className='text-gray-100'>
-              {user.isSignedIn && (
-                <SignOutButton>
-                  <button className='uppercase text-sm hover:bg-slate-600 py-2 px-3 bg-slate-700 rounded-md'>
-                    Sign Out
-                  </button>
-                </SignOutButton>
-              )}
-              {user.isSignedIn == false && (
-                <SignInButton>
-                  <button className='uppercase text-sm hover:bg-slate-600 py-2 px-3 bg-slate-700 rounded-md'>
-                    Sign In
-                  </button>
-                </SignInButton>
-              )}
+              {user.isSignedIn && <ButtonSignOut />}
+              {user.isSignedIn == false && <ButtonSignIn />}
             </li>
             {/* {user.isSignedIn && <UserButton />} */}
           </ul>

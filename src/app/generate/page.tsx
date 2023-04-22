@@ -1,8 +1,12 @@
-export default function GeneratePage() {
+import { NextPage } from 'next';
+import Sidebar from '~/components/generate/Sidebar';
+
+const GeneratePage: NextPage = () => {
   return (
     <main>
-      <h1>The</h1>
-      <h1>Generate Page</h1>
+      <Sidebar />
     </main>
   );
-}
+};
+
+export default GeneratePage;

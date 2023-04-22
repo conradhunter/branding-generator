@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.4",
+    "@prisma/client": "^4.13.0",
     "@trpc/client": "^10.21.1",
     "@trpc/server": "^10.21.1",
     "@types/node": "18.15.13",
