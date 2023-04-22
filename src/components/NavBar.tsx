@@ -5,6 +5,8 @@ import React, { FunctionComponent } from 'react';
 import { useUser } from '@clerk/nextjs';
 import ButtonSignIn from './buttons/ButtonSignIn';
 import ButtonSignOut from './buttons/ButtonSignOut';
+import Image from 'next/image';
+import logo from '../../public/logo.png';
 
 export const NavBar: FunctionComponent = () => {
   const user = useUser();
@@ -14,9 +16,9 @@ export const NavBar: FunctionComponent = () => {
     <nav className='bg-white dark:bg-gray-900 border-b-2 border-gray-800'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <Link href='/' className='flex items-center'>
-          <img
-            src='https://flowbite.com/docs/images/logo.svg'
-            className='h-8 mr-3'
+          <Image
+            src={logo}
+            className='h-10 w-10 rounded-lg mr-3'
             alt='Flowbite Logo'
           />
           <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
