@@ -12,7 +12,10 @@ const Testimonials = () => {
           <div className='grid gap-4 md:grid-cols-2 md:gap-8'>
             {testimonialsData.map((testimonial) => {
               return (
-                <div className='flex flex-col items-center gap-4 rounded-lg border border-violet-400 bg-gray-700 px-8 py-6 md:gap-6'>
+                <div
+                  key={testimonial.name}
+                  className='flex flex-col items-center gap-4 rounded-lg border border-violet-400 bg-gray-700 px-8 py-6 md:gap-6'
+                >
                   <div className='max-w-md text-center text-white lg:text-lg'>
                     “{testimonial.review}”
                   </div>
