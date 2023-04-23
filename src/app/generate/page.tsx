@@ -1,10 +1,11 @@
 import { NextPage } from 'next';
-import Sidebar from '~/components/generate/Sidebar';
+import GeneratorForm from '~/components/generate-components/GeneratorForm';
 
 const GeneratePage: NextPage = () => {
   return (
     <main>
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <GeneratorForm />
     </main>
   );
 };
