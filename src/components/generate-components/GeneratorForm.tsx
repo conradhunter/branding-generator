@@ -1,5 +1,5 @@
 import GenerateButton from '../buttons/GenerateButton';
-import DepthSelect from './generate-form-inputs/DepthSelect';
+import ResolutionSelect from './generate-form-inputs/DepthSelect';
 import NameInput from './generate-form-inputs/NameInput';
 import PrimaryColor from './generate-form-inputs/PrimaryColor';
 import PromptsInput from './generate-form-inputs/PromptsInput';
@@ -10,6 +10,8 @@ const GeneratorForm = () => {
   // TODO: add a small box to the right of box color inputs which show the user the color
   // TODO chosen rather than chaging background color of the input
 
+  // ! Add resolution input component
+
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
       <section className='mb-20 w-full'>
@@ -19,9 +21,9 @@ const GeneratorForm = () => {
         <form action='' className=''>
           <div className='mb-6 grid gap-6 md:grid-cols-2'>
             <NameInput />
-            <StyleSelect />
-            <DepthSelect />
             <PromptsInput />
+            <StyleSelect />
+            <ResolutionSelect />
             <PrimaryColor />
             <SecondaryColor />
           </div>

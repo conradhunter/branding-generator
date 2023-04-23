@@ -3,7 +3,7 @@ const Features = () => {
     <div className='bg-gray-800 py-6 sm:py-8 lg:py-12'>
       <div className='mx-auto max-w-screen-2xl px-4 md:px-8'>
         <div className='mb-10 md:mb-16'>
-          <h2 className='mb-4 text-center text-2xl font-bold text-gray-100 md:mb-6 lg:text-3xl'>
+          <h2 className='mb-6 text-center text-3xl font-bold text-gray-100 md:mb-12 lg:text-4xl'>
             Why choose BrandingGeneratorAI?
           </h2>
 
@@ -19,55 +19,32 @@ const Features = () => {
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
+                className='h-7 w-7'
+                viewBox='0 0 48 48'
               >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                <rect width='48' height='48' fill='transparent' />
+                <text
+                  x='50%'
+                  y='50%'
+                  textAnchor='middle'
                   strokeWidth='2'
-                  d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6'
-                />
+                  dy='.3em'
+                  fontSize='28'
+                  fill='white'
+                >
+                  HD
+                </text>
               </svg>
             </div>
 
             <div>
               <h3 className='mb-2 text-lg font-semibold text-gray-100 md:text-xl'>
-                Growth
+                Choose your resolution
               </h3>
               <p className='mb-2 text-gray-100'>
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-            </div>
-          </div>
-          <div className='flex gap-4 md:gap-6'>
-            <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
-                />
-              </svg>
-            </div>
-
-            <div>
-              <h3 className='mb-2 text-lg font-semibold text-gray-100 md:text-xl'>
-                Security
-              </h3>
-              <p className='mb-2 text-gray-100'>
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
+                Generate high-quality logos in multiple resolutions, including
+                256x256, 512x512, and 1024x1024, to cater to various display
+                needs.
               </p>
             </div>
           </div>
@@ -119,39 +96,11 @@ const Features = () => {
 
             <div>
               <h3 className='mb-2 text-lg font-semibold text-gray-100 md:text-xl'>
-                Speed
+                Affordable Prices
               </h3>
               <p className='mb-2 text-gray-100'>
-                Effortlessly develop your branding, freeing up your time to
-                focus on more critical tasks.
-              </p>
-            </div>
-          </div>
-          <div className='flex gap-4 md:gap-6'>
-            <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'
-                />
-              </svg>
-            </div>
-
-            <div>
-              <h3 className='mb-2 text-lg font-semibold text-gray-100 md:text-xl'>
-                Support
-              </h3>
-              <p className='mb-2 text-gray-100'>
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
+                We provide the most credits compared to other icon generator
+                services. Don't get scammed paying $10 for 10 credits.
               </p>
             </div>
           </div>
@@ -178,8 +127,8 @@ const Features = () => {
                 Dark Mode
               </h3>
               <p className='mb-2 text-gray-100'>
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
+                Generate logos in both light and dark modes, tailored to suit
+                your specific requirements.
               </p>
             </div>
           </div>

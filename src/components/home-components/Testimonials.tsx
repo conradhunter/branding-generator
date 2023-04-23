@@ -3,7 +3,7 @@ import { testimonialsData } from '../../../data/testimonials';
 const Testimonials = () => {
   return (
     <section>
-      <div className='py-6 sm:py-8 lg:py-12'>
+      <div className='py-6 sm:py-8 lg:pb-12'>
         <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
           <h2 className='mb-6 text-center text-3xl font-bold text-gray-100 md:mb-12 lg:text-4xl'>
             What others say about us
