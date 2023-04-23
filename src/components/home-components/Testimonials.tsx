@@ -23,7 +23,7 @@ const Testimonials = () => {
                   <div className='flex flex-col items-center gap-2 sm:flex-row md:gap-3'>
                     <div className='h-12 w-12 overflow-hidden rounded-full border-2 border-indigo-100 bg-gray-100 md:h-14 md:w-14'>
                       <img
-                        src='https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=112'
+                        src={testimonial.profileImage}
                         loading='lazy'
                         alt=''
                         height={100}
