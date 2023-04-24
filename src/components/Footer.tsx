@@ -30,11 +30,6 @@ export const Footer: FunctionComponent = () => {
               </Link>
             </li>
             <li>
-              <Link href='' className='mr-4 hover:underline md:mr-6'>
-                Pricing
-              </Link>
-            </li>
-            <li>
               <Link href='' className='mr-4 hover:underline md:mr-6 '>
                 Account
               </Link>

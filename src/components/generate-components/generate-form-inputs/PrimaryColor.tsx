@@ -3,13 +3,11 @@
 import { useRef } from 'react';
 
 const PrimaryColor = () => {
-  const primaryColorRef = useRef<HTMLInputElement>(null);
+  const primaryRef = useRef<HTMLInputElement>(null);
 
   const handlePrimaryColorChange = () => {
-    if (primaryColorRef.current) {
-      const colorValue = primaryColorRef.current.value;
-      primaryColorRef.current.style.backgroundColor = colorValue;
-    }
+    const primaryColor = primaryRef.current?.value;
+    console.log(primaryColor);
   };
 
   return (
@@ -22,7 +20,7 @@ const PrimaryColor = () => {
       </label>
       <input
         type='color'
-        ref={primaryColorRef}
+        ref={primaryRef}
         defaultValue='#ffffff'
         onChange={handlePrimaryColorChange}
         id='primary'
