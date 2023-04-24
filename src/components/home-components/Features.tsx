@@ -72,7 +72,7 @@ const Features = () => {
               </h3>
               <p className='mb-2 text-gray-100'>
                 Your generated content is securely stored on the cloud, allowing
-                you to easily access it whenever you sign in
+                you to easily access it whenever you sign in.
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ const Features = () => {
               </h3>
               <p className='mb-2 text-gray-100'>
                 We provide the most credits compared to other icon generator
-                services. Don't get scammed paying $10 for 10 credits.
+                services. Don&apos;t get scammed paying $10 for 10 credits.
               </p>
             </div>
           </div>
