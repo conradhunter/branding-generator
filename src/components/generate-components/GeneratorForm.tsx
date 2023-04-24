@@ -1,3 +1,4 @@
+import DisplayCredits from '../DisplayCredits';
 import GenerateButton from '../buttons/GenerateButton';
 import PreviewGeneratedBranding from './PreviewGeneratedBranding';
 import ResolutionSelect from './generate-form-inputs/DepthSelect';
@@ -25,6 +26,8 @@ const GeneratorForm = () => {
             Purchase credits here.
           </Link>
         </p>
+
+        <DisplayCredits />
 
         <form action='' className=''>
           <div className='mb-6 grid gap-6 md:grid-cols-2'>
