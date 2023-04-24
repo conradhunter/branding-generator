@@ -15,8 +15,6 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
     "@prisma/client": "^4.13.0",
-    "@trpc/client": "^10.21.1",
-    "@trpc/server": "^10.21.1",
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
