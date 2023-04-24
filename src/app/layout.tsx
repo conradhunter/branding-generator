@@ -1,8 +1,8 @@
-import DisplayCredits from '~/components/DisplayCredits';
 import { Footer } from '../components/Footer';
-import { NavBar } from '../components/NavBar';
+import { NavBar } from '../components/header/NavBar';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs/app-beta';
+import Header from '~/components/header/Header';
 
 export const metadata = {
   title: 'Branding Generator AI',
@@ -18,7 +18,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body>
-          <NavBar />
+          <Header />
           {children}
           <Footer />
         </body>

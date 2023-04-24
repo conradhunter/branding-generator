@@ -13,9 +13,8 @@ const Hero = () => {
             </h1>
 
             <p className='mb-8 leading-relaxed text-gray-100 md:mb-12 lg:w-4/5 xl:text-lg'>
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random.
+              BrandingGeneratorAI: Create pro-grade branding in seconds with AI.
+              Get 100 credits for $25. Limited time offer! Purchase now!
             </p>
 
             <div className='flex flex-col gap-5 sm:flex-row sm:justify-center lg:justify-start'>
