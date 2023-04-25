@@ -1,3 +1,7 @@
+import Cloud from '../icons/Cloud';
+import DarkMode from '../icons/DarkMode';
+import Dollar from '../icons/Dollar';
+
 const Features = () => {
   return (
     <div className='bg-gray-800 py-6 sm:py-8 lg:py-12'>
@@ -17,24 +21,7 @@ const Features = () => {
         <div className='grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16'>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-7 w-7'
-                viewBox='0 0 48 48'
-              >
-                <rect width='48' height='48' fill='transparent' />
-                <text
-                  x='50%'
-                  y='50%'
-                  textAnchor='middle'
-                  strokeWidth='2'
-                  dy='.3em'
-                  fontSize='28'
-                  fill='white'
-                >
-                  HD
-                </text>
-              </svg>
+              <span>HD</span>
             </div>
 
             <div>
@@ -50,20 +37,7 @@ const Features = () => {
           </div>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
-                />
-              </svg>
+              <Cloud />
             </div>
 
             <div>
@@ -78,20 +52,7 @@ const Features = () => {
           </div>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M13 10V3L4 14h7v7l9-11h-7z'
-                />
-              </svg>
+              <Dollar />
             </div>
 
             <div>
@@ -106,20 +67,7 @@ const Features = () => {
           </div>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
-                />
-              </svg>
+              <DarkMode />
             </div>
 
             <div>
