@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { testimonial } from '~/types/types';
 
 const Testimonials = () => {
@@ -62,6 +63,7 @@ const Testimonials = () => {
                         loading='lazy'
                         alt=''
                         height={100}
+                        width={100}
                         className='h-full w-full object-cover object-center'
                       />
                     </div>

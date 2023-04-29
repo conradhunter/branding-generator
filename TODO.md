@@ -1,13 +1,16 @@
 ## Todo list for branding genrator app
 
-- implement a way to save the generated image
-- implement stripe payment and how to store credits against the users account
-- set up s3 bucket to store images
+- finish stripe integration
+- create link between s3 and generated logo
 - 1-2 more UI components for landing page
 - create UI for the examples page (grid w/pagination)
 - create a more detailed pricing component to be displayed(possibly with different deals(purchase X amount of credits & receive access to beta features))
 - boiler plate terms & conditions, privacy policy, refund policy etc.
 - skeleton loading state for the clerk sign-in & sign-up pages until clerk modal is loaded
+- change all <img> to next Image component
+- update users public/private metadata to store credits against that user
+  use the webhooks fired on account creation
+  (https://www.answeroverflow.com/m/1096538539895836803)
 
 ## Features to expand towards
 
