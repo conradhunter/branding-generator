@@ -2,11 +2,10 @@
 
 - implement a way to save the generated image
 - implement stripe payment and how to store credits against the users account
-- change API keys that were leaked and remove them from the repo
 - set up s3 bucket to store images
 - 1-2 more UI components for landing page
 - create UI for the examples page (grid w/pagination)
-- create a more detailed pricing component to be displayed(possibly with different deals)
+- create a more detailed pricing component to be displayed(possibly with different deals(purchase X amount of credits & receive access to beta features))
 - boiler plate terms & conditions, privacy policy, refund policy etc.
 - skeleton loading state for the clerk sign-in & sign-up pages until clerk modal is loaded
 
