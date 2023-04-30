@@ -1,8 +1,9 @@
 import { Configuration, OpenAIApi } from "openai";
 
+
 const configuration = new Configuration({
     apiKey: process.env.DALL_E_API_KEY,
-    organization: process.env.DALL_E_ORGANISATION,
+    organization: "org-pPpZQP6QHreKXJuAzPxRizq8",
   });
 
   const mockAPI = process.env.MOCK_DALL_E
@@ -25,6 +26,7 @@ const configuration = new Configuration({
         return imageUrl;
     }
 }
+
 
 
 

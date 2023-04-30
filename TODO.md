@@ -11,6 +11,8 @@
 - update users public/private metadata to store credits against that user
   use the webhooks fired on account creation
   (https://www.answeroverflow.com/m/1096538539895836803)
+- initialze final prompt variable with template literal strings or each
+  input from generate form
 
 ## Features to expand towards
 

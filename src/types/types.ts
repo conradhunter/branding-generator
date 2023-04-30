@@ -4,3 +4,7 @@ export type testimonial = {
     rating: number
     profileImage: string
 }
+
+export type creditCount = {
+    credits: number
+}

@@ -10,9 +10,6 @@ import StyleSelect from './generate-form-inputs/StyleSelect';
 import Link from 'next/link';
 
 const GeneratorForm = () => {
-  // TODO: add a small box to the right of box color inputs which show the user the color
-  // TODO chosen rather than chaging background color of the input
-
   return (
     <>
       <section className='mb-20'>
