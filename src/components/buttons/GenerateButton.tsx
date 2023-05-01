@@ -20,7 +20,7 @@ const GenerateButton = () => {
               ? 'hover:bg-violet-500'
               : 'cursor-not-allowed opacity-50'
           }`}
-          onClick={generateLogo}
+          onClick={() => generateLogo()}
           disabled={!canGenerate}
         >
           Generate
