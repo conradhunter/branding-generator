@@ -9,7 +9,8 @@ export async function generateLogo() {
   const openai = new OpenAIApi(configuration);
 
   const response = await openai.createImage({
-    prompt: 'A modern black & white logo for OpenAI',
+    //prompt: 'High-end premium modern logo of the letters "CONRAD", featured on 99designs',
+    prompt: 'a cartoon chicken with a pink tye on',
     n: 1,
     size: '256x256',
   });
@@ -17,7 +18,5 @@ export async function generateLogo() {
   console.log(imageUrl);
   return imageUrl;
 }
-
-
 // TODO: Figure out how to send bearer token in request header
 

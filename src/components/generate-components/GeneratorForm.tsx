@@ -24,6 +24,16 @@ const GeneratorForm = () => {
           </Link>
         </p>
 
+        <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
+          Although the AI software that we employ for logo creation is a
+          powerful tool, it is still in its early stages of development and has
+          certain limitations. While the software is designed to generate logos
+          that align with your expectations, it's worth noting that it may
+          occasionally generate designs that are not in line with your initial
+          vision. However, these AI-generated logos can provide you with a good
+          starting point for further refinement.
+        </p>
+
         <DisplayCredits />
 
         <form action='' className=''>

@@ -1,7 +1,6 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateLogo } from '~/server/api/dall-e/dall-e';
 
 const GenerateButton = () => {
   const user = useUser();
@@ -20,7 +19,6 @@ const GenerateButton = () => {
               ? 'hover:bg-violet-500'
               : 'cursor-not-allowed opacity-50'
           }`}
-          onClick={() => generateLogo()}
           disabled={!canGenerate}
         >
           Generate
