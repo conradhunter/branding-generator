@@ -5,8 +5,9 @@ const configuration = new Configuration({
   organization: 'org-pPpZQP6QHreKXJuAzPxRizq8'
 });
 
+const openai = new OpenAIApi(configuration);
+
 export async function generateLogo() {
-  const openai = new OpenAIApi(configuration);
 
   const response = await openai.createImage({
     prompt: 'High-end premium modern logo of the letters "KATHY", featured on 99designs',
@@ -19,3 +20,7 @@ export async function generateLogo() {
 }
 // TODO: Figure out how to send bearer token in request header
 
+
+export async function generateBusinessName() {
+  // call GPT AI to generate business name
+} 
