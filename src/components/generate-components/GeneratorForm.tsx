@@ -28,7 +28,7 @@ const GeneratorForm = () => {
           Although the AI software that we employ for logo creation is a
           powerful tool, it is still in its early stages of development and has
           certain limitations. While the software is designed to generate logos
-          that align with your expectations, it's worth noting that it may
+          that align with your expectations, it&apos;s worth noting that it may
           occasionally generate designs that are not in line with your initial
           vision. However, these AI-generated logos can provide you with a good
           starting point for further refinement.
