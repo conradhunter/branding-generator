@@ -19,8 +19,8 @@
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
+    "@uploadthing/react": "^2.0.1",
     "autoprefixer": "10.4.14",
-    "aws-sdk": "^2.1368.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "next": "^13.3.1",
@@ -28,9 +28,11 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
     "stripe": "^12.3.0",
     "tailwindcss": "3.3.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "uploadthing": "^2.0.1"
   },
   "devDependencies": {
     "prettier": "^2.8.7",

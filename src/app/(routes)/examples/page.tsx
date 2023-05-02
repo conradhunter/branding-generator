@@ -4,8 +4,27 @@ import { NextPage } from 'next';
 import { generateLogo } from '~/app/api/openAI/server';
 
 const ExamplesPage: NextPage = () => {
-  // Fetch examples from s3 bucket and display them here in a grid
-  // with pagination and a filter input (filter color etc)
+  const images = [
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
+  ];
 
   return (
     <main>

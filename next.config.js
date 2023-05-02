@@ -6,6 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     OPEN_AI_API_KEY: process.env.DALL_E_API_KEY,
+    UPLOAD_THING_KEY: process.env.UPLOAD_THING_API_KEY,
   },
 };
 
