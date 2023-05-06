@@ -8,7 +8,11 @@ const nextConfig = {
     NEXT_CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
   },
   images: {
-    domains: ['images.unsplash.com', 'pbs.twimg.com'],
+    domains: [
+      'images.unsplash.com',
+      'pbs.twimg.com',
+      'oaidalleapiprodscus.blob.core.windows.net',
+    ],
   },
 };
 

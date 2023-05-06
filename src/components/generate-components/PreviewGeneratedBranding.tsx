@@ -1,11 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ImageSkeleton from '../skeleton-placeholders/ImageSkeleton';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { imageUrl } from '~/app/api/generate';
+import Image from 'next/image';
 
 const PreviewGeneratedBranding = () => {
   const [loading, setLoading] = useState<boolean>(true);
+
+  function handleDisplayPreview() {
+    if (imageUrl) {
+      setLoading(false);
+      return (
+        <Image src={imageUrl} alt='Generated logo' width={500} height={500} />
+      );
+    } else {
+      return <ImageSkeleton />;
+    }
+  }
 
   return (
     <section>

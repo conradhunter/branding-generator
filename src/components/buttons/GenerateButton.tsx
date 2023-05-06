@@ -11,10 +11,30 @@ interface promptProps {
 const GenerateButton = (props: promptProps) => {
   const user = useUser();
 
-  const credits = user.user?.publicMetadata.credits || 0;
+  const credits = user.user?.unsafeMetadata.credits || 0;
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits > 0;
+
+  function deductCredits() {
+    if (
+      user &&
+      user.user?.unsafeMetadata &&
+      typeof user.user.unsafeMetadata.credits === 'number'
+    ) {
+      const updatedCredits = user.user.unsafeMetadata.credits - 5;
+
+      user.user?.update({
+        unsafeMetadata: {
+          credits: updatedCredits,
+        },
+      });
+    } else {
+      console.error(
+        'User, unsafeMetadata, or credits is not properly defined.'
+      );
+    }
+  }
 
   return (
     <>

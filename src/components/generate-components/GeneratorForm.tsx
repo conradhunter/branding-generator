@@ -39,12 +39,11 @@ const GeneratorForm = () => {
     }));
   };
 
-  let logoPrompt = `High-end premium ${logoPromptData.style} logo of the letters ${logoPromptData.name}, with a primary color of ${logoPromptData.primaryColor} & a secondary color of ${logoPromptData.secondaryColor}, featured on 99designs`;
+  let logoPrompt = `${logoPromptData.name} logo concept inspired by ${logoPromptData.prompts} in a ${logoPromptData.prompts} style. Use ${logoPromptData.primaryColor} as the primary color and ${logoPromptData.secondaryColor} as the secondary color`;
   let resolution = logoPromptData.resolution;
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(logoPromptData);
   }
 
   return (
