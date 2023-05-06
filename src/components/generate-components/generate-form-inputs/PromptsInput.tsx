@@ -1,17 +1,26 @@
 'use client';
 
-const PromptsInput = () => {
+import { ChangeEvent } from 'react';
+import { InputProps, LogoPromptData } from '../GeneratorForm';
+
+const PromptsInput = ({ updateProperty }: InputProps) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    updateProperty(name as keyof LogoPromptData, value);
+  };
+
   return (
     <div className='mb-6'>
       <label
-        htmlFor='email'
+        htmlFor='prompts'
         className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
       >
         Descriptive Prompts &#40;adjectives&#41;
       </label>
       <input
-        type='email'
-        id='email'
+        id='prompts'
+        onChange={handleChange}
+        name='prompts'
         className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
         required
       />

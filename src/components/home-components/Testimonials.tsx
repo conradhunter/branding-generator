@@ -58,7 +58,7 @@ const Testimonials = () => {
 
                   <div className='flex flex-col items-center gap-2 sm:flex-row md:gap-3'>
                     <div className='h-12 w-12 overflow-hidden rounded-full border-2 border-indigo-100 bg-gray-100 md:h-14 md:w-14'>
-                      <img
+                      <Image
                         src={testimonial.profileImage}
                         loading='lazy'
                         alt=''

@@ -18,7 +18,7 @@ const Features = () => {
           </p>
         </div>
 
-        <div className='grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16'>
+        <div className='mx-auto grid max-w-7xl gap-8 sm:grid-cols-2 md:gap-12 xl:gap-16'>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
               <span>HD</span>

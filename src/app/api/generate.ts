@@ -7,17 +7,21 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export async function generateLogo() {
+export async function generateLogo(logoPrompt: string, resolution: string) {
 
   const response = await openai.createImage({
-    prompt: 'High-end premium modern logo of the letters "KATHY", featured on 99designs',
+    prompt: logoPrompt,
     n: 1,
-    size: '256x256',
+    size: '256x256' || resolution,
   });
   const imageUrl = response.data.data[0].url;
+
+  // if res succesful, deduct credits from users metadata
+
   console.log(imageUrl);
   return imageUrl;
 }
+
 // TODO: Figure out how to send bearer token in request header
 
 

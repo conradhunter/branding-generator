@@ -1,11 +1,16 @@
-import { clerkClient } from "@clerk/nextjs/dist/api";
+import { clerkClient } from "@clerk/nextjs/server"
 
-export const updateCreditsMetadata = async () => {
-    await clerkClient.users.updateUserMetadata('user_id', {
-        publicMetadata: {
-            credits: 10,
-        }
-    })
+const userId = 'user_2OlWzS3YMSFW7hKMO3AUMo1rKbs'
+const newMetadata = {
+    credits: 469,
+    updated: Date.now(),
+}
+
+
+
+const deductCredits = async () => {
+    const user = await clerkClient.users.getUser(userId)
+    console.log(user)
 }
 // (https://www.answeroverflow.com/m/1096538539895836803)
 

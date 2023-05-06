@@ -1,8 +1,14 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
+import { generateLogo } from '~/app/api/generate';
 
-const GenerateButton = () => {
+interface promptProps {
+  logoPrompt: string;
+  resolution: string;
+}
+
+const GenerateButton = (props: promptProps) => {
   const user = useUser();
 
   const credits = user.user?.publicMetadata.credits || 0;
@@ -20,6 +26,7 @@ const GenerateButton = () => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
+          onClick={() => generateLogo(props.logoPrompt, props.resolution)}
         >
           Generate
         </button>

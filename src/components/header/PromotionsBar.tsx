@@ -10,7 +10,7 @@ const PromotionsBar = () => {
     <>
       {!user.isSignedIn && (
         <div className='w-full bg-gray-700 p-2'>
-          <p className='text-center text-xs leading-relaxed text-gray-100 lg:w-4/5 xl:text-lg'>
+          <p className='text-center text-xs leading-relaxed text-gray-100 '>
             🎉 Limited time offer: 100 credits for $25!{' '}
             <Link className='underline' href='/sign-up'>
               Join now!

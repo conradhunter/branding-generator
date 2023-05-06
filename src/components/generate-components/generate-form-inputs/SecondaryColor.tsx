@@ -1,13 +1,18 @@
 'use client';
 
-import { useRef } from 'react';
+import { ChangeEvent, useRef } from 'react';
+import { InputProps, LogoPromptData } from '../GeneratorForm';
 
-const SecondaryColor = () => {
+const SecondaryColor = ({ updateProperty }: InputProps) => {
   const secondaryRef = useRef<HTMLInputElement>(null);
 
-  const handleSecondaryColorChange = () => {
-    const secondaryColor = secondaryRef.current?.value;
-    console.log(secondaryColor);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    updateProperty(name as keyof LogoPromptData, value);
+    const handleSecondaryColorChange = () => {
+      secondaryRef.current?.value;
+    };
+    handleSecondaryColorChange();
   };
 
   return (
@@ -20,7 +25,8 @@ const SecondaryColor = () => {
       </label>
       <input
         type='color'
-        onChange={handleSecondaryColorChange}
+        onChange={handleChange}
+        name='secondaryColor'
         ref={secondaryRef}
         defaultValue='#ffffff'
         id='secondary'

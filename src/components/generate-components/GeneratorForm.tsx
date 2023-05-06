@@ -1,57 +1,67 @@
-import DisplayCredits from '../DisplayCredits';
+'use client';
+
+import { useState } from 'react';
 import GenerateButton from '../buttons/GenerateButton';
-import PreviewGeneratedBranding from './PreviewGeneratedBranding';
-import ResolutionSelect from './generate-form-inputs/DepthSelect';
 import NameInput from './generate-form-inputs/NameInput';
 import PrimaryColor from './generate-form-inputs/PrimaryColor';
 import PromptsInput from './generate-form-inputs/PromptsInput';
 import SecondaryColor from './generate-form-inputs/SecondaryColor';
 import StyleSelect from './generate-form-inputs/StyleSelect';
-import Link from 'next/link';
+import ResolutionSelect from './generate-form-inputs/Resolution';
+
+export type LogoPromptData = {
+  name: string;
+  prompts: string;
+  style: string;
+  resolution: string;
+  primaryColor: string;
+  secondaryColor: string;
+};
+
+export type InputProps = {
+  updateProperty: (key: keyof LogoPromptData, value: string) => void;
+};
 
 const GeneratorForm = () => {
+  const [logoPromptData, setLogoPromptData] = useState<LogoPromptData>({
+    name: '',
+    prompts: '',
+    style: '',
+    resolution: '',
+    primaryColor: '',
+    secondaryColor: '',
+  });
+
+  const updateProperty = (key: keyof LogoPromptData, value: string) => {
+    setLogoPromptData((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
+  };
+
+  let logoPrompt = `High-end premium ${logoPromptData.style} logo of the letters ${logoPromptData.name}, with a primary color of ${logoPromptData.primaryColor} & a secondary color of ${logoPromptData.secondaryColor}, featured on 99designs`;
+  let resolution = logoPromptData.resolution;
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    console.log(logoPromptData);
+  }
+
   return (
     <>
-      <section className='mb-20'>
-        <h1 className='mb-10 text-4xl font-medium text-white'>
-          Lets generate your logo.
-        </h1>
-
-        <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-          Logo generation costs 5 credits per logo generation.{' '}
-          <Link className='underline' href=''>
-            Purchase credits here.
-          </Link>
-        </p>
-
-        <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-          Although the AI software that we employ for logo creation is a
-          powerful tool, it is still in its early stages of development and has
-          certain limitations. While the software is designed to generate logos
-          that align with your expectations, it&apos;s worth noting that it may
-          occasionally generate designs that are not in line with your initial
-          vision. However, these AI-generated logos can provide you with a good
-          starting point for further refinement.
-        </p>
-
-        <DisplayCredits />
-
-        <form action='' className=''>
-          <div className='mb-6 grid gap-6 md:grid-cols-2'>
-            <NameInput />
-            <PromptsInput />
-            <StyleSelect />
-            <ResolutionSelect />
-            <PrimaryColor />
-            <SecondaryColor />
-          </div>
-          <div className='flex w-full items-center justify-center'>
-            <GenerateButton />
-          </div>
-        </form>
-      </section>
-
-      <PreviewGeneratedBranding />
+      <form onSubmit={handleSubmit} className=''>
+        <div className='mb-6 grid gap-6 md:grid-cols-2'>
+          <NameInput updateProperty={updateProperty} />
+          <PromptsInput updateProperty={updateProperty} />
+          <StyleSelect updateProperty={updateProperty} />
+          <ResolutionSelect updateProperty={updateProperty} />
+          <PrimaryColor updateProperty={updateProperty} />
+          <SecondaryColor updateProperty={updateProperty} />
+        </div>
+        <div className='flex w-full items-center justify-center'>
+          <GenerateButton logoPrompt={logoPrompt} resolution={resolution} />
+        </div>
+      </form>
     </>
   );
 };
