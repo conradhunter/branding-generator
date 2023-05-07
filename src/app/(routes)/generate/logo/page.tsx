@@ -4,7 +4,7 @@ import DisplayCredits from '~/components/DisplayCredits';
 import GeneratorForm from '~/components/generate-components/GeneratorForm';
 import PreviewGeneratedBranding from '~/components/generate-components/PreviewGeneratedBranding';
 
-const GeneratePage: NextPage = () => {
+const LogoGeneratePage: NextPage = () => {
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
       {/* <Sidebar /> */}
@@ -39,4 +39,4 @@ const GeneratePage: NextPage = () => {
   );
 };
 
-export default GeneratePage;
+export default LogoGeneratePage;

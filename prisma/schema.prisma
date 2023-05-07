@@ -24,8 +24,9 @@ model GeneratedBusinessName {
   updatedAt DateTime @updatedAt
 }
 
-model Logo {
+model ColorPalette {
   id        String   @id @default(cuid())
-  url       String
+  colors    Json
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
