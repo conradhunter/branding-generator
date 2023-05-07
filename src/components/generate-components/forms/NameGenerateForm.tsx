@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ChangeEvent, useState } from 'react';
-import GenerateNameButton from '../../buttons/GenerateNameButton';
+import GenerateNameButton from '../../buttons/generate-buttons/GenerateNameButton';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 

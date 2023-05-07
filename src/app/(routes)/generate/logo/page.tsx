@@ -32,7 +32,6 @@ const LogoGeneratePage: NextPage = () => {
         <DisplayCredits />
 
         <LogoGeneratorForm />
-        {/* <GeneratorForm /> */}
       </section>
       <PreviewGeneratedBranding />
     </main>

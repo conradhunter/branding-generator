@@ -31,18 +31,32 @@ export async function generateLogo(logoPrompt: string, resolution: string) {
 
 
 let namesResponse: any
+
 export async function generateBusinessName(prompt: string) {
   // call GPT AI to generate business name
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: prompt,
     n: 10,
-    max_tokens: 60,
+    max_tokens: 10,
     temperature: 0.9,
   })
 
   namesResponse = response;
   console.log(namesResponse?.data.choices)
+} 
 
-  
+let sloganResponse: any
+export async function generateSlogan(prompt: string) {
+  // call GPT AI to generate business name
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: prompt,
+    n: 1,
+    max_tokens: 10,
+    temperature: 0.9,
+  })
+
+  sloganResponse = response;
+  console.log(sloganResponse?.data.choices)
 } 

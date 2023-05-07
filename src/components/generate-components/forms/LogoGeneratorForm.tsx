@@ -3,7 +3,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
-import GenerateButton from '~/components/buttons/GenerateButton';
+import GenerateButton from '~/components/buttons/generate-buttons/GenerateLogoButton';
 import InputColor from '../form-inputs/InputColor';
 import Select from '../form-inputs/Select';
 

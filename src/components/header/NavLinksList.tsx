@@ -13,35 +13,39 @@ const NavLinksList = () => {
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  const handleHover = () => {
-    setIsHovered(!isHovered);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   return (
     <ul className='mt-4 flex items-center rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900'>
       <li className='text-gray-100'>
-        <button onClick={handleHover} className='flex items-center'>
+        <button
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className='flex items-center'
+        >
           Generate <CaretDown />
         </button>
         <ul
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           className={`absolute ${
             isHovered ? 'block' : 'hidden'
-          } flex flex-col bg-gray-700 p-2 text-gray-100`}
+          } flex min-w-[125px] flex-col rounded bg-gray-700 p-2 text-gray-100`}
         >
-          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
+          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
             <Link href='/generate/name'>Name</Link>
           </li>
-          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
+          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
             <Link href='/generate/logo'>Logo</Link>
           </li>
-          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/logo'>Color Palette</Link>
-          </li>
-          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/logo'>Typography</Link>
-          </li>
-          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/logo'>Slogan</Link>
+          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
+            <Link href='/generate/slogan'>Slogan</Link>
           </li>
         </ul>
       </li>
