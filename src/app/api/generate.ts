@@ -31,11 +31,11 @@ export async function generateLogo(logoPrompt: string, resolution: string) {
 
 
 let namesResponse: any
-export async function generateBusinessName() {
+export async function generateBusinessName(prompt: string) {
   // call GPT AI to generate business name
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: 'Generate a business name for a new company selling beanies & hats in a snow town',
+    prompt: prompt,
     n: 10,
     max_tokens: 60,
     temperature: 0.9,

@@ -20,27 +20,28 @@ const NavLinksList = () => {
   return (
     <ul className='mt-4 flex items-center rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900'>
       <li className='text-gray-100'>
-        <button
-          // onMouseEnter={handleHover}
-          // onMouseLeave={handleHover}
-          onClick={handleHover}
-          className='flex items-center'
-        >
+        <button onClick={handleHover} className='flex items-center'>
           Generate <CaretDown />
         </button>
         <ul
           className={`absolute ${
             isHovered ? 'block' : 'hidden'
-          } flex flex-col gap-2 bg-gray-700 p-3 text-gray-100`}
+          } flex flex-col bg-gray-700 p-2 text-gray-100`}
         >
-          <li className='rounded-sm p-1 duration-150 hover:bg-gray-600'>
+          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
             <Link href='/generate/name'>Name</Link>
           </li>
-          <li className='rounded-sm p-1 duration-150 hover:bg-gray-600'>
+          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
             <Link href='/generate/logo'>Logo</Link>
           </li>
-          <li className='rounded-sm p-1 duration-150 hover:bg-gray-600'>
+          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
             <Link href='/generate/logo'>Color Palette</Link>
+          </li>
+          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
+            <Link href='/generate/logo'>Typography</Link>
+          </li>
+          <li className='rounded-sm p-2 duration-150 hover:bg-gray-600'>
+            <Link href='/generate/logo'>Slogan</Link>
           </li>
         </ul>
       </li>

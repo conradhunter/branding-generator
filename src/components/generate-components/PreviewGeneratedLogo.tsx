@@ -6,7 +6,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import { imageUrl } from '~/app/api/generate';
 import Image from 'next/image';
 
-const PreviewGeneratedBranding = () => {
+const PreviewGeneratedLogo = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   function handleDisplayPreview() {
@@ -53,4 +53,4 @@ const PreviewGeneratedBranding = () => {
   );
 };
 
-export default PreviewGeneratedBranding;
+export default PreviewGeneratedLogo;

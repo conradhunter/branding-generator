@@ -1,9 +1,13 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateBusinessName, generateLogo } from '~/app/api/generate';
+import { generateBusinessName } from '~/app/api/generate';
 
-const GenerateNameButton = () => {
+type GenerateNameButtonProps = {
+  finalNamePrompt: string;
+};
+
+const GenerateNameButton = ({ finalNamePrompt }: GenerateNameButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.unsafeMetadata.credits || 0;
@@ -41,7 +45,7 @@ const GenerateNameButton = () => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={generateBusinessName}
+          onClick={() => generateBusinessName(finalNamePrompt)}
         >
           Generate
         </button>

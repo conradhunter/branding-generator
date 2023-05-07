@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import DisplayCredits from '~/components/DisplayCredits';
-import GeneratorForm from '~/components/generate-components/GeneratorForm';
-import PreviewGeneratedBranding from '~/components/generate-components/PreviewGeneratedBranding';
+import GeneratorForm from '~/components/generate-components/forms/GeneratorForm';
+import LogoGeneratorForm from '~/components/generate-components/forms/LogoGeneratorForm';
+import PreviewGeneratedBranding from '~/components/generate-components/PreviewGeneratedLogo';
 
 const LogoGeneratePage: NextPage = () => {
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
-      {/* <Sidebar /> */}
       <section className='mb-20'>
         <h1 className='mb-10 text-4xl font-medium text-white'>
           Lets generate your logo.
@@ -32,7 +32,8 @@ const LogoGeneratePage: NextPage = () => {
 
         <DisplayCredits />
 
-        <GeneratorForm />
+        <LogoGeneratorForm />
+        {/* <GeneratorForm /> */}
       </section>
       <PreviewGeneratedBranding />
     </main>
