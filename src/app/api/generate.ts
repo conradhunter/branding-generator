@@ -11,7 +11,12 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export async function deductCredits() {}
+async function deductCredits() {
+  // get user credits
+  // deduct credits
+  // update user credits
+  // return user credits
+}
 
 
 export async function generateLogo(logoPrompt: string, resolution: string) {
@@ -27,6 +32,9 @@ export async function generateLogo(logoPrompt: string, resolution: string) {
   if (response.status === 200) {
     // deductCredits();
     console.log('deduct credits');
+  } else {
+    console.log('error deducting credits');
+    console.error(response);
   }
 
   console.log(imageUrl);
@@ -42,6 +50,14 @@ export async function generateBusinessName(prompt: string) {
     max_tokens: 10,
     temperature: 0.9,
   })
+
+  if (response.status === 200) {
+    // deductCredits();
+    console.log('deduct credits');
+  } else {
+    console.log('error deducting credits');
+    console.error(response);
+  }
 
   namesResponse = response;
   console.log(namesResponse?.data.choices)

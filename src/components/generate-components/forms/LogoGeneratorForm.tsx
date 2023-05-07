@@ -14,12 +14,15 @@ export type LogoPromptData = {
 };
 
 const LogoGeneratorForm = () => {
-  const [logoPromptData, setLogoPromptData] = useState<LogoPromptData>({
+  const initialState: LogoPromptData = {
     name: '',
     subject: '',
     style: '',
     resolution: '',
-  });
+  };
+
+  const [logoPromptData, setLogoPromptData] =
+    useState<LogoPromptData>(initialState);
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
@@ -35,8 +38,13 @@ const LogoGeneratorForm = () => {
   let logoPrompt = `a horse, finance company logo design`;
   let resolution = logoPromptData.resolution;
 
+  const resetForm = (initialState: LogoPromptData) => {
+    setLogoPromptData(initialState);
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    resetForm(initialState);
   }
 
   return (

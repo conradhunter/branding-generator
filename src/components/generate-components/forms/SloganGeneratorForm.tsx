@@ -11,10 +11,13 @@ export type LogoPromptData = {
 };
 
 const SloganGeneratorForm = () => {
-  const [logoPromptData, setLogoPromptData] = useState<LogoPromptData>({
+  const initialState: LogoPromptData = {
     productOrService: '',
     keyWord: '',
-  });
+  };
+
+  const [logoPromptData, setLogoPromptData] =
+    useState<LogoPromptData>(initialState);
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
@@ -28,8 +31,13 @@ const SloganGeneratorForm = () => {
 
   let sloganPrompt: string = `Generate a slogan for ${logoPromptData.productOrService} company using the keywords ${logoPromptData.keyWord}`;
 
+  const resetForm = (initialState: LogoPromptData) => {
+    setLogoPromptData(initialState);
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    resetForm(initialState);
   }
 
   return (

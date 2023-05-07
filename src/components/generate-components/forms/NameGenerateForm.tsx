@@ -13,11 +13,14 @@ type NamePromptData = {
 };
 
 const NameGenerateForm = () => {
-  const [nameFormValues, setNameFormValues] = useState<NamePromptData>({
+  const initialState: NamePromptData = {
     industry: '',
     productOrService: '',
     keyWords: '',
-  });
+  };
+
+  const [nameFormValues, setNameFormValues] =
+    useState<NamePromptData>(initialState);
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement>,
@@ -29,8 +32,13 @@ const NameGenerateForm = () => {
     });
   };
 
+  const resetForm = (initialState: NamePromptData) => {
+    setNameFormValues(initialState);
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    resetForm(initialState);
   }
 
   let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry which sells ${nameFormValues.productOrService}. Some keywords about the business include ${nameFormValues.keyWords}`;
