@@ -4,12 +4,12 @@ import React, { ChangeEvent, useState } from 'react';
 import GenerateNameButton from '../../buttons/generate-buttons/GenerateNameButton';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
+import InputRange from '../form-inputs/InputRange';
 
 type NamePromptData = {
   industry: string;
   productOrService: string;
   keyWords: string;
-  geography: string;
 };
 
 const NameGenerateForm = () => {
@@ -17,7 +17,6 @@ const NameGenerateForm = () => {
     industry: '',
     productOrService: '',
     keyWords: '',
-    geography: '',
   });
 
   const handleInputChange = (
@@ -34,7 +33,7 @@ const NameGenerateForm = () => {
     event.preventDefault();
   }
 
-  let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry which sells ${nameFormValues.productOrService}. The business is located in ${nameFormValues.geography}. Some keywords about the business include ${nameFormValues.keyWords}`;
+  let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry which sells ${nameFormValues.productOrService}. Some keywords about the business include ${nameFormValues.keyWords}`;
 
   return (
     <form action='' onSubmit={handleSubmit}>
@@ -60,11 +59,8 @@ const NameGenerateForm = () => {
         />
       </div>
       <div className='mb-6'>
-        <Label content={'Geography (Suburb, City or Country)'} />
-        <InputText
-          value={nameFormValues.geography}
-          onChange={(event) => handleInputChange(event, 'geography')}
-        />
+        <Label content={'Temperature '} />
+        <InputRange />
       </div>
       <div className='flex w-full items-center justify-center'>
         <GenerateNameButton finalNamePrompt={finalNamePrompt} />

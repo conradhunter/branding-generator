@@ -1,5 +1,8 @@
 import { Configuration, OpenAIApi } from 'openai';
 
+export let imageUrl: string | undefined;
+export let namesResponse: any
+export let sloganResponse: any
 
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_API_KEY || process.env.DALL_E_API_KEY,
@@ -8,7 +11,8 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export let imageUrl: string | undefined;
+export async function deductCredits() {}
+
 
 export async function generateLogo(logoPrompt: string, resolution: string) {
 
@@ -29,9 +33,6 @@ export async function generateLogo(logoPrompt: string, resolution: string) {
   return imageUrl;
 }
 
-
-let namesResponse: any
-
 export async function generateBusinessName(prompt: string) {
   // call GPT AI to generate business name
   const response = await openai.createCompletion({
@@ -46,7 +47,6 @@ export async function generateBusinessName(prompt: string) {
   console.log(namesResponse?.data.choices)
 } 
 
-let sloganResponse: any
 export async function generateSlogan(prompt: string) {
   // call GPT AI to generate business name
   const response = await openai.createCompletion({

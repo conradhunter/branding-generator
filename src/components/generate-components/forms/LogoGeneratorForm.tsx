@@ -4,26 +4,21 @@ import React, { ChangeEvent, useState } from 'react';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 import GenerateButton from '~/components/buttons/generate-buttons/GenerateLogoButton';
-import InputColor from '../form-inputs/InputColor';
 import Select from '../form-inputs/Select';
 
 export type LogoPromptData = {
   name: string;
-  prompts: string;
+  subject: string;
   style: string;
   resolution: string;
-  primaryColor: string;
-  secondaryColor: string;
 };
 
 const LogoGeneratorForm = () => {
   const [logoPromptData, setLogoPromptData] = useState<LogoPromptData>({
     name: '',
-    prompts: '',
+    subject: '',
     style: '',
     resolution: '',
-    primaryColor: '',
-    secondaryColor: '',
   });
 
   const handleInputChange = (
@@ -36,7 +31,8 @@ const LogoGeneratorForm = () => {
     });
   };
 
-  let logoPrompt = `${logoPromptData.name} logo concept inspired by ${logoPromptData.prompts} in a ${logoPromptData.prompts} style. Use ${logoPromptData.primaryColor} as the primary color and ${logoPromptData.secondaryColor} as the secondary color`;
+  //   let logoPrompt = `Generate a logo for ${logoPromptData.name} using the keywords ${logoPromptData.subject} in a ${logoPromptData.style} style`;
+  let logoPrompt = `a horse, finance company logo design`;
   let resolution = logoPromptData.resolution;
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -46,17 +42,17 @@ const LogoGeneratorForm = () => {
   return (
     <form action='' onSubmit={handleSubmit}>
       <div className='mb-6'>
-        <Label content={'Business/Company Name'} />
+        <Label content={'Name/Lettering'} />
         <InputText
           value={logoPromptData.name}
           onChange={(event) => handleInputChange(event, 'name')}
         />
       </div>
       <div className='mb-6'>
-        <Label content={'Descriptive Prompts (adjectives)'} />
+        <Label content={'Description (adjectives, verbs, nouns)'} />
         <InputText
-          value={logoPromptData.prompts}
-          onChange={(event) => handleInputChange(event, 'prompts')}
+          value={logoPromptData.subject}
+          onChange={(event) => handleInputChange(event, 'subject')}
         />
       </div>
       <div className='mb-6'>
@@ -82,20 +78,6 @@ const LogoGeneratorForm = () => {
           value={logoPromptData.resolution}
           options={['256x256', '512x512', '1024x1024']}
           onChange={(event) => handleInputChange(event, 'resolution')}
-        />
-      </div>
-      <div className='mb-6'>
-        <Label content={'Primary Color'} />
-        <InputColor
-          value={logoPromptData.primaryColor}
-          onChange={(event) => handleInputChange(event, 'primaryColor')}
-        />
-      </div>
-      <div className='mb-6'>
-        <Label content={'Secondary Color (optional)'} />
-        <InputColor
-          value={logoPromptData.secondaryColor}
-          onChange={(event) => handleInputChange(event, 'secondaryColor')}
         />
       </div>
       <div className='flex w-full items-center justify-center'>

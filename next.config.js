@@ -12,6 +12,7 @@ const nextConfig = {
       'images.unsplash.com',
       'pbs.twimg.com',
       'oaidalleapiprodscus.blob.core.windows.net',
+      'images.clerk.dev',
     ],
   },
 };
