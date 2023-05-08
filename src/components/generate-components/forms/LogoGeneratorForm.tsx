@@ -7,15 +7,13 @@ import GenerateButton from '~/components/buttons/generate-buttons/GenerateLogoBu
 import Select from '../form-inputs/Select';
 
 export type LogoPromptData = {
-  name: string;
   subject: string;
   style: string;
   resolution: string;
 };
 
-const LogoGeneratorForm = () => {
+const LogoGeneratorForm = ({ handleDisplay }: any) => {
   const initialState: LogoPromptData = {
-    name: '',
     subject: '',
     style: '',
     resolution: '',
@@ -34,8 +32,7 @@ const LogoGeneratorForm = () => {
     });
   };
 
-  //   let logoPrompt = `Generate a logo for ${logoPromptData.name} using the keywords ${logoPromptData.subject} in a ${logoPromptData.style} style`;
-  let logoPrompt = `a horse, finance company logo design`;
+  let logoPrompt = `square app logo/icon, ${logoPromptData.subject}, digital vector graphic, sharp, 4k, detailed, trending in artstation, 2 tone, graphic design style & ${logoPromptData.style}, on dark background`;
   let resolution = logoPromptData.resolution;
 
   const resetForm = (initialState: LogoPromptData) => {
@@ -50,17 +47,11 @@ const LogoGeneratorForm = () => {
   return (
     <form action='' onSubmit={handleSubmit}>
       <div className='mb-6'>
-        <Label content={'Name/Lettering'} />
-        <InputText
-          value={logoPromptData.name}
-          onChange={(event) => handleInputChange(event, 'name')}
-        />
-      </div>
-      <div className='mb-6'>
         <Label content={'Description (adjectives, verbs, nouns)'} />
         <InputText
           value={logoPromptData.subject}
           onChange={(event) => handleInputChange(event, 'subject')}
+          placeholder={'e.g sideview of horse'}
         />
       </div>
       <div className='mb-6'>
@@ -68,16 +59,7 @@ const LogoGeneratorForm = () => {
         <Select
           value={logoPromptData.style}
           onChange={(event) => handleInputChange(event, 'style')}
-          options={[
-            'Modern',
-            'Minimal',
-            'Vintage',
-            'Retro',
-            'Classic',
-            'Elegant',
-            'Cartoon',
-            'Handwritten',
-          ]}
+          options={['Modern', 'Minimal', 'Retro', 'Cartoon']}
         />
       </div>
       <div className='mb-6'>

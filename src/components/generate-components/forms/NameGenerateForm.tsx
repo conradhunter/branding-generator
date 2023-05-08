@@ -10,6 +10,7 @@ type NamePromptData = {
   industry: string;
   productOrService: string;
   keyWords: string;
+  temperature: number;
 };
 
 const NameGenerateForm = () => {
@@ -17,6 +18,7 @@ const NameGenerateForm = () => {
     industry: '',
     productOrService: '',
     keyWords: '',
+    temperature: 1,
   };
 
   const [nameFormValues, setNameFormValues] =
@@ -42,6 +44,7 @@ const NameGenerateForm = () => {
   }
 
   let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry which sells ${nameFormValues.productOrService}. Some keywords about the business include ${nameFormValues.keyWords}`;
+  let temperature: number = nameFormValues.temperature;
 
   return (
     <form action='' onSubmit={handleSubmit}>
@@ -67,11 +70,19 @@ const NameGenerateForm = () => {
         />
       </div>
       <div className='mb-6'>
-        <Label content={'Temperature '} />
-        <InputRange />
+        <Label content={'Focus (Low = focused, High = creative)'} />
+        <InputRange
+          min={0}
+          max={2}
+          defaultValue={1}
+          onChange={(event) => handleInputChange(event, 'temperature')}
+        />
       </div>
       <div className='flex w-full items-center justify-center'>
-        <GenerateNameButton finalNamePrompt={finalNamePrompt} />
+        <GenerateNameButton
+          finalNamePrompt={finalNamePrompt}
+          temperature={temperature}
+        />
       </div>
     </form>
   );

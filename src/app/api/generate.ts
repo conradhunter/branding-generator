@@ -18,59 +18,13 @@ async function deductCredits() {
   // return user credits
 }
 
-
-export async function generateLogo(logoPrompt: string, resolution: string) {
-
-  const response = await openai.createImage({
-    prompt: logoPrompt,
-    n: 1,
-    size: '256x256' || resolution,
-  });
-  imageUrl = response.data.data[0].url;
-
-  // if res succesful, deduct credits from users metadata
-  if (response.status === 200) {
-    // deductCredits();
-    console.log('deduct credits');
-  } else {
-    console.log('error deducting credits');
-    console.error(response);
-  }
-
-  console.log(imageUrl);
-  return imageUrl;
-}
-
-export async function generateBusinessName(prompt: string) {
-  // call GPT AI to generate business name
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: prompt,
-    n: 10,
-    max_tokens: 10,
-    temperature: 0.9,
-  })
-
-  if (response.status === 200) {
-    // deductCredits();
-    console.log('deduct credits');
-  } else {
-    console.log('error deducting credits');
-    console.error(response);
-  }
-
-  namesResponse = response;
-  console.log(namesResponse?.data.choices)
-} 
-
-export async function generateSlogan(prompt: string) {
-  // call GPT AI to generate business name
+export async function generateSlogan(prompt: string, temperature: number) {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: prompt,
     n: 1,
     max_tokens: 10,
-    temperature: 0.9,
+    temperature: temperature,
   })
 
   sloganResponse = response;

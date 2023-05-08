@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateLogo } from '~/app/api/generate';
+import { generateLogo } from '~/app/api/logo';
 
 interface promptProps {
   logoPrompt: string;
@@ -16,25 +16,9 @@ const GenerateButton = (props: promptProps) => {
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits > 0;
 
-  function deductCredits() {
-    if (
-      user &&
-      user.user?.unsafeMetadata &&
-      typeof user.user.unsafeMetadata.credits === 'number'
-    ) {
-      const updatedCredits = user.user.unsafeMetadata.credits - 5;
+  const userId: any = user.user?.id;
 
-      user.user?.update({
-        unsafeMetadata: {
-          credits: updatedCredits,
-        },
-      });
-    } else {
-      console.error(
-        'User, unsafeMetadata, or credits is not properly defined.'
-      );
-    }
-  }
+  async function deductCredits() {}
 
   return (
     <>
@@ -46,7 +30,9 @@ const GenerateButton = (props: promptProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateLogo(props.logoPrompt, props.resolution)}
+          onClick={() =>
+            generateLogo(props.logoPrompt, props.resolution, deductCredits)
+          }
         >
           Generate
         </button>

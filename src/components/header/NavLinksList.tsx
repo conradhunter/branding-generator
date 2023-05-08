@@ -38,15 +38,17 @@ const NavLinksList = () => {
             isHovered ? 'block' : 'hidden'
           } flex min-w-[125px] flex-col rounded bg-gray-700 p-2 text-gray-100`}
         >
-          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/name'>Name</Link>
-          </li>
-          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/logo'>Logo</Link>
-          </li>
-          <li className='rounded p-2 duration-150 hover:bg-gray-600'>
-            <Link href='/generate/slogan'>Slogan</Link>
-          </li>
+          <Link href='/generate/name'>
+            <li className='rounded p-2 duration-150 hover:bg-gray-600'>Name</li>
+          </Link>
+          <Link href='/generate/logo'>
+            <li className='rounded p-2 duration-150 hover:bg-gray-600'>Logo</li>
+          </Link>
+          <Link href='/generate/slogan'>
+            <li className='rounded p-2 duration-150 hover:bg-gray-600'>
+              Slogan
+            </li>
+          </Link>
         </ul>
       </li>
       <li className='text-gray-100 hover:text-gray-300/75'>

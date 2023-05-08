@@ -5,9 +5,13 @@ import { generateSlogan } from '~/app/api/generate';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
+  temperature: number;
 };
 
-const GenerateSloganButton = ({ sloganPrompt }: GenerateSloganButtonProps) => {
+const GenerateSloganButton = ({
+  sloganPrompt,
+  temperature,
+}: GenerateSloganButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.unsafeMetadata.credits || 0;
@@ -45,7 +49,7 @@ const GenerateSloganButton = ({ sloganPrompt }: GenerateSloganButtonProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateSlogan(sloganPrompt)}
+          onClick={() => generateSlogan(sloganPrompt, temperature)}
         >
           Generate
         </button>

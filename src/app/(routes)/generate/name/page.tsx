@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import DisplayCredits from '~/components/DisplayCredits';
 import NameGenerateForm from '~/components/generate-components/forms/NameGenerateForm';
+import PreviewGeneratedText from '~/components/generate-components/PreviewGeneratedText';
 
 const NameGeneratorPage: NextPage = () => {
   return (
@@ -23,6 +24,8 @@ const NameGeneratorPage: NextPage = () => {
 
         <NameGenerateForm />
       </section>
+
+      <PreviewGeneratedText />
     </main>
   );
 };

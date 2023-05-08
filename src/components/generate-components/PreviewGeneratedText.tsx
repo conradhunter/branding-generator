@@ -1,13 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import ImageSkeleton from '../skeleton-placeholders/ImageSkeleton';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import Image from 'next/image';
+import { useState } from 'react';
+import CopyToClipboard from '../icons/CopyToClipboard';
+import TextSkeleton from '../skeleton-placeholders/TextSkeleton';
 
-const PreviewGeneratedLogo = () => {
+const PreviewGeneratedText = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [imageResponse, setImageResponse] = useState<any>();
 
   return (
     <section>
@@ -30,24 +28,14 @@ const PreviewGeneratedLogo = () => {
         <div className='relative'>
           {!loading && (
             <button className='absolute right-4 top-4 z-10 cursor-pointer text-slate-300 duration-200 hover:text-slate-100'>
-              <FileDownloadIcon />
+              <CopyToClipboard />
             </button>
           )}
-          {loading ? (
-            <ImageSkeleton />
-          ) : (
-            <Image
-              src={imageResponse}
-              alt='Generated logo'
-              width={208}
-              height={208}
-              className='rounded-xl shadow-md'
-            />
-          )}
+          <TextSkeleton />
         </div>
       </div>
     </section>
   );
 };
 
-export default PreviewGeneratedLogo;
+export default PreviewGeneratedText;

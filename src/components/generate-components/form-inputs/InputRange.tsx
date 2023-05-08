@@ -1,13 +1,21 @@
 import React from 'react';
 
-const InputRange = () => {
+type InputRangeProps = {
+  min: number;
+  max: number;
+  defaultValue: number;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+const InputRange = ({ min, max, defaultValue, onChange }: InputRangeProps) => {
   return (
     <input
-      id='minmax-range'
       type='range'
-      min={0}
-      max={20}
-      value={10}
+      min={min}
+      max={max}
+      step={0.1}
+      onChange={onChange}
+      defaultValue={defaultValue}
       className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
     />
   );
