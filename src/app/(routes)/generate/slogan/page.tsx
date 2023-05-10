@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import DisplayCredits from '~/components/DisplayCredits';
 import SloganGeneratorForm from '~/components/generate-components/forms/SloganGeneratorForm';
+import PreviewGeneratedText from '~/components/generate-components/PreviewGeneratedText';
 
 const SloganGeneratorPage: NextPage = () => {
   return (
@@ -14,7 +15,10 @@ const SloganGeneratorPage: NextPage = () => {
 
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
           Slogan generation costs 5 credits.{' '}
-          <Link className='underline' href=''>
+          <Link
+            className='underline'
+            href=''
+          >
             Purchase credits here.
           </Link>
         </p>
@@ -23,6 +27,7 @@ const SloganGeneratorPage: NextPage = () => {
 
         <SloganGeneratorForm />
       </section>
+      <PreviewGeneratedText name={'slogan'} />
     </main>
   );
 };

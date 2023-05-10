@@ -4,24 +4,28 @@ import { useState } from 'react';
 import CopyToClipboard from '../icons/CopyToClipboard';
 import TextSkeleton from '../skeleton-placeholders/TextSkeleton';
 
-const PreviewGeneratedText = () => {
+type PreviewGeneratedTextProps = {
+  name: string;
+};
+
+const PreviewGeneratedText = ({ name }: PreviewGeneratedTextProps) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   return (
     <section>
       <h1 className='mb-10 text-4xl font-medium text-white'>
-        Preview generated logo.
+        Preview generated {name}.
       </h1>
       {loading ? (
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-          After generating a logo, the preview will be displayed below for easy
-          download.
+          After generating a {name}, the preview will be displayed below for
+          easy review.
         </p>
       ) : (
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-          Your logo is ready for download. Click the download button located at
-          the top right of the logo. If you are unsatisfied with the logo, you
-          can refine your prompts and try generating again.
+          Your {name} is ready for review. Click the copy to clipboard button
+          located at the top right of the preview. If you are unsatisfied with
+          the {name}, you can refine your prompts and try generating again.
         </p>
       )}
       <div className='flex w-full items-center justify-center rounded-2xl bg-gray-700 py-10 shadow-xl'>
