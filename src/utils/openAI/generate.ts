@@ -5,12 +5,12 @@ export let namesResponse: any
 export let sloganResponse: any
 export let imageUrl: string | undefined;
 
-const configuration = new Configuration({
+export const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_API_KEY || process.env.DALL_E_API_KEY,
   organization: process.env.NEXT_OPEN_AI_ORGANISATION || process.env.OPEN_AI_ORGANISATION
 });
   
-  const openai = new OpenAIApi(configuration);
+export const openai = new OpenAIApi(configuration);
 
 export async function generateBusinessName(prompt: string, temperature: number) {
     const response = await openai.createCompletion({
@@ -23,7 +23,7 @@ export async function generateBusinessName(prompt: string, temperature: number) 
   
     if (response.status === 200) {
       // deductCredits();
-    //   handleDisplay(response.data.choices)
+    //   handleDisplay(response)
       console.log('deduct credits');
     } else {
       console.log('error deducting credits');
