@@ -6,6 +6,7 @@ const nextConfig = {
     UPLOAD_THING_KEY: process.env.UPLOAD_THING_API_KEY,
     CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
     NEXT_CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+    NEXT_OPEN_AI_ORGANISATION: process.env.OPEN_AI_ORGANISATION,
   },
   images: {
     domains: [

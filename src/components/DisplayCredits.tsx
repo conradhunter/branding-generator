@@ -5,7 +5,7 @@ import { useUser } from '@clerk/nextjs';
 const DisplayCredits = () => {
   const user = useUser();
 
-  const credits: any = user.user?.unsafeMetadata.credits;
+  const credits: any = user.user?.publicMetadata.credits;
 
   if (user.isSignedIn && credits !== undefined && credits !== 0) {
     return (

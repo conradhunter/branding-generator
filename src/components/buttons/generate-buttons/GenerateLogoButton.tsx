@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateLogo } from '~/app/api/logo';
+import { generateLogo } from '~/utils/openAI/generate';
 
 interface promptProps {
   logoPrompt: string;
@@ -11,7 +11,7 @@ interface promptProps {
 const GenerateButton = (props: promptProps) => {
   const user = useUser();
 
-  const credits = user.user?.unsafeMetadata.credits || 0;
+  const credits = user.user?.publicMetadata.credits || 0;
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits > 0;

@@ -12,7 +12,7 @@ export type LogoPromptData = {
   resolution: string;
 };
 
-const LogoGeneratorForm = ({ handleDisplay }: any) => {
+const LogoGeneratorForm = () => {
   const initialState: LogoPromptData = {
     subject: '',
     style: '',

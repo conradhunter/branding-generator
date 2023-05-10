@@ -1,4 +1,4 @@
-import { ClerkProvider } from '@clerk/nextjs/app-beta';
+import { ClerkProvider } from '@clerk/nextjs';
 import '../globals.css';
 
 export const metadata = {
