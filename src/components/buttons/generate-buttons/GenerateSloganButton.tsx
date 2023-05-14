@@ -1,18 +1,13 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
+import { generateSlogan } from '~/utils/openAI/init';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
-  temperature: number;
-  generateSlogan: (prompt: string, temperature: number) => void;
 };
 
-const GenerateSloganButton = ({
-  sloganPrompt,
-  temperature,
-  generateSlogan,
-}: GenerateSloganButtonProps) => {
+const GenerateSloganButton = ({ sloganPrompt }: GenerateSloganButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.publicMetadata.credits || 0;
@@ -30,7 +25,7 @@ const GenerateSloganButton = ({
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateSlogan(sloganPrompt, temperature)}
+          onClick={() => generateSlogan(sloganPrompt)}
         >
           Generate
         </button>

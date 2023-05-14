@@ -1,5 +1,5 @@
-import { auth, currentUser } from '@clerk/nextjs';
-import { User, clerkClient } from '@clerk/nextjs/server';
+import { auth } from '@clerk/nextjs';
+import { clerkClient } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {

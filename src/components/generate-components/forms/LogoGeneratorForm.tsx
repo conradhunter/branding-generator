@@ -46,31 +46,6 @@ const LogoGeneratorForm = () => {
     resetForm(initialState);
   }
 
-  let imageUrl: string;
-  const [responseImageUrl, setResponseImageUrl] = useState<string>('');
-
-  async function generateLogo(logoPrompt: string, resolution: string) {
-    const response = await openai.createImage({
-      prompt: logoPrompt,
-      n: 1,
-      size: '256x256' || resolution,
-    });
-
-    // if res succesful, deduct credits from users metadata
-    if (response.status === 200) {
-      imageUrl = response.data.data[0].url!;
-      setResponseImageUrl(imageUrl);
-      console.log('deduct credits');
-    } else {
-      console.log('error deducting credits');
-      console.error(response);
-      return null;
-    }
-
-    console.log(imageUrl);
-    return imageUrl;
-  }
-
   return (
     <>
       <form
@@ -105,11 +80,10 @@ const LogoGeneratorForm = () => {
           <GenerateButton
             logoPrompt={logoPrompt}
             resolution={resolution}
-            generateLogo={generateLogo}
           />
         </div>
       </form>
-      <PreviewGeneratedBranding responseImageUrl={responseImageUrl} />
+      <PreviewGeneratedBranding />
     </>
   );
 };

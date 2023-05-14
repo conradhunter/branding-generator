@@ -1,18 +1,13 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
+import { generateBusinessName } from '~/utils/openAI/init';
 
 type GenerateNameButtonProps = {
   finalNamePrompt: string;
-  temperature: number;
-  generateBusinessName: (prompt: string, temperature: number) => void;
 };
 
-const GenerateNameButton = ({
-  finalNamePrompt,
-  temperature,
-  generateBusinessName,
-}: GenerateNameButtonProps) => {
+const GenerateNameButton = ({ finalNamePrompt }: GenerateNameButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.publicMetadata.credits || 0;
@@ -30,7 +25,7 @@ const GenerateNameButton = ({
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateBusinessName(finalNamePrompt, temperature)}
+          onClick={() => generateBusinessName(finalNamePrompt)}
         >
           Generate
         </button>

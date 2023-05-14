@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 import DisplayCredits from '~/components/DisplayCredits';
 import SloganGeneratorForm from '~/components/generate-components/forms/SloganGeneratorForm';
-import PreviewGeneratedText from '~/components/generate-components/PreviewGeneratedText';
 
 const SloganGeneratorPage: NextPage = () => {
   return (

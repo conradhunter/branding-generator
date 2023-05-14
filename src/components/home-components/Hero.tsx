@@ -30,7 +30,11 @@ const Hero = () => {
             </div>
           </div>
           <div className='h-48 overflow-hidden rounded-lg lg:h-auto xl:w-5/12'>
-            <Image src={undrawAI} alt='' className='h-full w-full' />
+            <Image
+              src={undrawAI}
+              alt=''
+              className='h-full w-full'
+            />
           </div>
         </section>
       </div>

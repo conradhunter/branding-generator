@@ -1,22 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ImageSkeleton from '../skeleton-placeholders/ImageSkeleton';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Image from 'next/image';
 
-type PreviewGeneratedLogoProps = {
-  responseImageUrl: string;
-};
-
-const PreviewGeneratedLogo = ({
-  responseImageUrl,
-}: PreviewGeneratedLogoProps) => {
+const PreviewGeneratedLogo = () => {
   const [loading, setLoading] = useState<boolean>(true);
-
-  if (responseImageUrl) {
-    setLoading(false);
-  }
 
   return (
     <section>
@@ -46,7 +36,7 @@ const PreviewGeneratedLogo = ({
             <ImageSkeleton />
           ) : (
             <Image
-              src={responseImageUrl}
+              src={'/images/generated-logo.png'}
               alt='Generated logo'
               width={208}
               height={208}
