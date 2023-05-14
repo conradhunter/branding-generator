@@ -14,7 +14,7 @@ const GenerateButton = (props: promptProps) => {
   const credits = user.user?.publicMetadata.credits || 0;
 
   const canGenerate =
-    user.isSignedIn && typeof credits === 'number' && credits > 0;
+    user.isSignedIn && typeof credits === 'number' && credits >= 5;
 
   return (
     <>

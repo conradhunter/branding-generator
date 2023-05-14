@@ -13,6 +13,7 @@ const nextConfig = {
 
     NEXT_PUBLIC_STRIPE: process.env.STRIPE_PUBLISHABLE_KEY,
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    CREDITS_PRODUCT_ID: process.env.CREDITS_PRODUCT_ID,
   },
   images: {
     domains: [

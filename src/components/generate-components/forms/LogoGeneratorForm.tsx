@@ -5,7 +5,6 @@ import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 import GenerateButton from '~/components/buttons/generate-buttons/GenerateLogoButton';
 import Select from '../form-inputs/Select';
-import { openai } from '~/utils/openAI/init';
 import PreviewGeneratedBranding from '../PreviewGeneratedLogo';
 
 export type LogoPromptData = {

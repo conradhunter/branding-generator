@@ -7,6 +7,8 @@ export default authMiddleware({
     '/generate/slogan',
     '/generate/name',
     '/example',
+    '/sign-in',
+    '/sign-up',
   ],
 });
 

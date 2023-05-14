@@ -8,7 +8,10 @@ export const Footer: FunctionComponent = () => {
     <footer className='m-4 rounded-lg bg-white shadow dark:bg-gray-900'>
       <div className='mx-auto w-full max-w-screen-xl p-4 md:py-8'>
         <div className='sm:flex sm:items-center sm:justify-between'>
-          <Link href='/' className='mb-4 flex items-center sm:mb-0'>
+          <Link
+            href='/'
+            className='mb-4 flex items-center sm:mb-0'
+          >
             <Image
               src={logo}
               className='mr-3 h-8 w-8 rounded-lg'
@@ -20,22 +23,26 @@ export const Footer: FunctionComponent = () => {
           </Link>
           <ul className='mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0'>
             <li>
-              <Link href='/generate' className='mr-4 hover:underline md:mr-6 '>
+              <Link
+                href='/generate'
+                className='mr-4 hover:underline md:mr-6 '
+              >
                 Generate
               </Link>
             </li>
             <li>
-              <Link href='' className='mr-4 hover:underline md:mr-6 '>
+              <Link
+                href='/examples'
+                className='mr-4 hover:underline md:mr-6 '
+              >
                 Examples
               </Link>
             </li>
             <li>
-              <Link href='' className='mr-4 hover:underline md:mr-6 '>
-                Account
-              </Link>
-            </li>
-            <li>
-              <Link href='' className='hover:underline'>
+              <Link
+                href=''
+                className='hover:underline'
+              >
                 Terms & Conditions
               </Link>
             </li>
