@@ -1,7 +1,15 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from '@clerk/nextjs';
 
-export default authMiddleware();
+export default authMiddleware({
+  publicRoutes: [
+    '/',
+    '/generate/logo',
+    '/generate/slogan',
+    '/generate/name',
+    '/example',
+  ],
+});
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/"],
+  matcher: ['/((?!.*\\..*|_next).*)', '/'],
 };
