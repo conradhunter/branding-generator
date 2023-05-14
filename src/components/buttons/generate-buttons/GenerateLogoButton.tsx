@@ -1,11 +1,11 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateLogo } from '~/utils/openAI/generate';
 
 interface promptProps {
   logoPrompt: string;
   resolution: string;
+  generateLogo: (prompt: string, resolution: string) => void;
 }
 
 const GenerateButton = (props: promptProps) => {
@@ -15,10 +15,6 @@ const GenerateButton = (props: promptProps) => {
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits > 0;
-
-  const userId: any = user.user?.id;
-
-  async function deductCredits() {}
 
   return (
     <>
@@ -30,9 +26,7 @@ const GenerateButton = (props: promptProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() =>
-            generateLogo(props.logoPrompt, props.resolution, deductCredits)
-          }
+          onClick={() => props.generateLogo(props.logoPrompt, props.resolution)}
         >
           Generate
         </button>

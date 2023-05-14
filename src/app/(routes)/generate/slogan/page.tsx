@@ -8,7 +8,7 @@ import PreviewGeneratedText from '~/components/generate-components/PreviewGenera
 const SloganGeneratorPage: NextPage = () => {
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
-      <section className='mb-20'>
+      <section>
         <h1 className='mb-10 text-4xl font-medium text-white'>
           Lets generate your businesses slogan.
         </h1>
@@ -27,7 +27,6 @@ const SloganGeneratorPage: NextPage = () => {
 
         <SloganGeneratorForm />
       </section>
-      <PreviewGeneratedText name={'slogan'} />
     </main>
   );
 };

@@ -1,16 +1,17 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateSlogan } from '~/utils/openAI/generate';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
   temperature: number;
+  generateSlogan: (prompt: string, temperature: number) => void;
 };
 
 const GenerateSloganButton = ({
   sloganPrompt,
   temperature,
+  generateSlogan,
 }: GenerateSloganButtonProps) => {
   const user = useUser();
 

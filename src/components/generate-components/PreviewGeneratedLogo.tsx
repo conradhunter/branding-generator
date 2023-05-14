@@ -5,9 +5,18 @@ import ImageSkeleton from '../skeleton-placeholders/ImageSkeleton';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Image from 'next/image';
 
-const PreviewGeneratedLogo = () => {
+type PreviewGeneratedLogoProps = {
+  responseImageUrl: string;
+};
+
+const PreviewGeneratedLogo = ({
+  responseImageUrl,
+}: PreviewGeneratedLogoProps) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [imageResponse, setImageResponse] = useState<any>();
+
+  if (responseImageUrl) {
+    setLoading(false);
+  }
 
   return (
     <section>
@@ -37,7 +46,7 @@ const PreviewGeneratedLogo = () => {
             <ImageSkeleton />
           ) : (
             <Image
-              src={imageResponse}
+              src={responseImageUrl}
               alt='Generated logo'
               width={208}
               height={208}

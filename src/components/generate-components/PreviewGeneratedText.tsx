@@ -6,10 +6,16 @@ import TextSkeleton from '../skeleton-placeholders/TextSkeleton';
 
 type PreviewGeneratedTextProps = {
   name: string;
+  generated: string[];
 };
 
-const PreviewGeneratedText = ({ name }: PreviewGeneratedTextProps) => {
+const PreviewGeneratedText = ({
+  name,
+  generated,
+}: PreviewGeneratedTextProps) => {
   const [loading, setLoading] = useState<boolean>(true);
+
+  if (generated) setLoading(false);
 
   return (
     <section>
@@ -35,7 +41,11 @@ const PreviewGeneratedText = ({ name }: PreviewGeneratedTextProps) => {
               <CopyToClipboard />
             </button>
           )}
-          <TextSkeleton />
+          {generated ? (
+            <pre>{JSON.stringify(generated, null, 2)}</pre>
+          ) : (
+            <TextSkeleton />
+          )}
         </div>
       </div>
     </section>

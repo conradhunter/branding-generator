@@ -1,16 +1,17 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateBusinessName } from '~/utils/openAI/generate';
 
 type GenerateNameButtonProps = {
   finalNamePrompt: string;
   temperature: number;
+  generateBusinessName: (prompt: string, temperature: number) => void;
 };
 
 const GenerateNameButton = ({
   finalNamePrompt,
   temperature,
+  generateBusinessName,
 }: GenerateNameButtonProps) => {
   const user = useUser();
 
