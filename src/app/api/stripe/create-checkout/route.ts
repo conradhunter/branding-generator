@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe } from '../../../../lib/stripe';
+import Stripe from 'stripe';
 
 export async function POST(request: NextRequest) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2022-11-15',
+    typescript: true,
+  });
+
   try {
     const createCheckout = await stripe.checkout.sessions.create({
       mode: 'payment',
