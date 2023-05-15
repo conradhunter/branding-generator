@@ -21,9 +21,6 @@ const BuyCreditsButton = () => {
     window.location.href = url;
   };
 
-  // console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
-  // console.log(process.env.STRIPE_SECRET_KEY);
-
   return (
     <button
       onClick={handleBuyCredits}
