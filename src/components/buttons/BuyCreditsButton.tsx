@@ -1,16 +1,15 @@
 'use client';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
 
 const BuyCreditsButton = () => {
   const handleBuyCredits = async () => {
     const data = await fetch('/api/stripe/create-checkout', {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRIPE_KEY}`,
       },
-      body: JSON.stringify({ quantity: 1, stripePromise }),
+      body: JSON.stringify({ quantity: 1 }),
     });
 
     if (!data.ok) {
@@ -21,6 +20,9 @@ const BuyCreditsButton = () => {
 
     window.location.href = url;
   };
+
+  // console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
+  // console.log(process.env.STRIPE_SECRET_KEY);
 
   return (
     <button
