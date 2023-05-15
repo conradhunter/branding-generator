@@ -29,7 +29,6 @@ const GenerateButton = (props: GenerateNameButtonProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateLogo(props.logoPrompt, props.resolution)}
         >
           Generate
         </button>
