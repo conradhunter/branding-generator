@@ -6,7 +6,7 @@ const BuyCreditsButton = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorisation: `Bearer ${process.env.STRIPE_SECRET_KEY!}`,
+        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY!}`,
       },
       body: JSON.stringify({ quantity: 1, test: 'test' }),
     });

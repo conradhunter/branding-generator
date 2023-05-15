@@ -1,12 +1,7 @@
-import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
+import { stripe } from '../../../../lib/stripe';
 
 export async function POST(request: NextRequest) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: '2022-11-15',
-    typescript: true,
-  });
-
   try {
     const createCheckout = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -20,7 +15,7 @@ export async function POST(request: NextRequest) {
       currency: 'usd',
 
       success_url: 'http://localhost:3000/generate/name',
-      cancel_url: 'http://localhost:3000/cancel',
+      cancel_url: 'http://localhost:3000/',
     });
 
     return NextResponse.json({ url: createCheckout.url });
