@@ -7,7 +7,7 @@ const BuyCreditsButton = () => {
       mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRIPE_KEY}`,
+        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
       },
       body: JSON.stringify({ quantity: 1 }),
     });
