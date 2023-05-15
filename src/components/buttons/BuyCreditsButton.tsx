@@ -1,4 +1,7 @@
 'use client';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
 
 const BuyCreditsButton = () => {
   const handleBuyCredits = async () => {
@@ -6,9 +9,8 @@ const BuyCreditsButton = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRIPE!}`,
       },
-      body: JSON.stringify({ quantity: 1, test: 'test' }),
+      body: JSON.stringify({ quantity: 1, stripePromise }),
     });
 
     if (!data.ok) {

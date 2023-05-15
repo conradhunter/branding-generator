@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
