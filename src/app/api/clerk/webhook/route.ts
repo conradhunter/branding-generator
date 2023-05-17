@@ -1,7 +1,6 @@
 //ignore typescript
 // @ts-nocheck
 
-import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 
 const webhookSecret: string = process.env.CLERK_WEBHOOK_SECRET || '';

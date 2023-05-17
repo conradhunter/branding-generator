@@ -35,15 +35,25 @@ const MobileNav = ({
           <li className='mb-4'>Home</li>
         </Link>
         <li
-          className={`mb-4 cursor-pointer ${isDropdownOpen ? 'mb-0' : 'mb-4'}`}
+          className={`cursor-pointer ${isDropdownOpen ? 'mb-0' : 'mb-4'}`}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           Generate <CaretDown />
         </li>
-        <ul className={isDropdownOpen ? 'submenu-open' : 'submenu-close'}>
-          <li>Name</li>
-          <li>Logo</li>
-          <li>Slogan</li>
+        <ul
+          className={`${
+            isDropdownOpen ? 'submenu-open' : 'hidden'
+          } ml-4 py-2 text-base text-gray-100/75`}
+        >
+          <Link href='/'>
+            <li className=''>Name</li>
+          </Link>
+          <Link href='/'>
+            <li className=''>Logo</li>
+          </Link>
+          <Link href='/'>
+            <li className=''>Slogan</li>
+          </Link>
         </ul>
         <Link href='/'>
           <li className='mb-4'>Examples</li>
