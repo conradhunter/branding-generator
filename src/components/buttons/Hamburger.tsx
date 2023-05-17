@@ -32,7 +32,10 @@ const Hamburger = () => {
           ></path>
         </svg>
       </button>
-      <MobileNav isMobileMenuOpen={isMobileMenuOpen} />
+      <MobileNav
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+        isMobileMenuOpen={isMobileMenuOpen}
+      />
     </>
   );
 };

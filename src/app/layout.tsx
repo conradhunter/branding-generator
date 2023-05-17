@@ -1,5 +1,5 @@
 import { Footer } from '~/components/Footer';
-import '../globals.css';
+import './globals.css';
 import Header from '~/components/header/Header';
 import { ClerkProvider } from '@clerk/nextjs';
 

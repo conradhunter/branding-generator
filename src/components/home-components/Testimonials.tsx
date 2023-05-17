@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { testimonial } from '~/types/types';
+import { testimonial } from '~/lib/types/types';
 
 const Testimonials = () => {
   const testimonialsData: testimonial[] = [

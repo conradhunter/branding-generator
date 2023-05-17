@@ -21,7 +21,7 @@ const Hero = () => {
 
             <div className='flex flex-col gap-5 sm:flex-row sm:justify-center lg:justify-start'>
               <button className='min-w-[120px] rounded-md bg-violet-400 px-3 py-2 text-sm font-medium uppercase text-white shadow-lg duration-150 hover:bg-violet-500'>
-                <Link href='/generate'>Get Started</Link>
+                <Link href='/generate/name'>Get Started</Link>
               </button>
 
               <button className='min-w-[120px] rounded-md border border-violet-400 px-3 py-2 text-sm font-medium uppercase text-white shadow-lg duration-150 hover:bg-violet-400'>

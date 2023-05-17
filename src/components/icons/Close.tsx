@@ -2,11 +2,20 @@
 
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import { type } from 'os';
 
-const Close = () => {
+type CloseProps = {
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobileMenuOpen: boolean;
+};
+
+const Close = ({ setIsMobileMenuOpen, isMobileMenuOpen }: CloseProps) => {
   return (
     <>
-      <CloseIcon className='absolute right-4 top-4 text-gray-100' />
+      <CloseIcon
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className='absolute right-4 top-4 cursor-pointer text-gray-100'
+      />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 import Link from 'next/link';
-import DisplayCredits from '~/components/DisplayCredits';
+import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import NameGenerateForm from '~/components/generate-components/forms/NameGenerateForm';
 
 const NameGeneratorPage: NextPage = () => {

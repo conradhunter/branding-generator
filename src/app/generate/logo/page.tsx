@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import DisplayCredits from '~/components/DisplayCredits';
+import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import LogoGeneratorForm from '~/components/generate-components/forms/LogoGeneratorForm';
 import PreviewGeneratedBranding from '~/components/generate-components/PreviewGeneratedLogo';
 
