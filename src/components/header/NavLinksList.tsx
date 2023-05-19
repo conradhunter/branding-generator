@@ -29,7 +29,7 @@ const NavLinksList = () => {
           onMouseLeave={handleMouseLeave}
           className='flex items-center'
         >
-          Generate <CaretDown />
+          Generate <CaretDown isDropdownOpen />
         </button>
         <ul
           onMouseEnter={handleMouseEnter}
