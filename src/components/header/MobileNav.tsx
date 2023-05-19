@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CaretDown from '../icons/CaretDown';
 import Close from '../icons/Close';
 import { useUser } from '@clerk/nextjs';
@@ -24,7 +24,7 @@ const MobileNav = ({
     <div
       className={`border-1 ${
         isMobileMenuOpen ? 'block' : 'hidden'
-      } absolute right-0 top-0 h-screen w-2/3 max-w-sm rounded-b-lg border-slate-900 bg-slate-700 px-20 py-24 shadow-sm`}
+      } absolute right-6 top-24 h-fit w-2/3 max-w-sm rounded-2xl border-slate-900 bg-slate-700 px-14 py-16 shadow-sm`}
     >
       <Close
         setIsMobileMenuOpen={setIsMobileMenuOpen}
@@ -38,20 +38,20 @@ const MobileNav = ({
           className={`cursor-pointer ${isDropdownOpen ? 'mb-0' : 'mb-4'}`}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          Generate <CaretDown />
+          Generate <CaretDown isDropdownOpen={isDropdownOpen} />
         </li>
         <ul
           className={`${
             isDropdownOpen ? 'submenu-open' : 'hidden'
           } ml-4 py-2 text-base text-gray-100/75`}
         >
-          <Link href='/'>
+          <Link href='/generate/name'>
             <li className=''>Name</li>
           </Link>
-          <Link href='/'>
+          <Link href='/generate/logo'>
             <li className=''>Logo</li>
           </Link>
-          <Link href='/'>
+          <Link href='/generate/slogan'>
             <li className=''>Slogan</li>
           </Link>
         </ul>

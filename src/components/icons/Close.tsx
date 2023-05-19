@@ -14,7 +14,7 @@ const Close = ({ setIsMobileMenuOpen, isMobileMenuOpen }: CloseProps) => {
     <>
       <CloseIcon
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className='absolute right-4 top-4 cursor-pointer text-gray-100'
+        className='absolute right-6 top-6 cursor-pointer text-gray-100'
       />
     </>
   );
