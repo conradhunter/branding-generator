@@ -2,12 +2,6 @@ import { NextApiRequest } from 'next';
 import getRawBody from 'raw-body';
 import { stripe } from '~/lib/stripe';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 // @ts-ignore
 export async function POST(request, response) {
   try {
