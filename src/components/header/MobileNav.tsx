@@ -43,7 +43,7 @@ const MobileNav = ({
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [setIsMobileMenuOpen]);
+  }, [isMobileMenuOpen, setIsMobileMenuOpen]);
 
   return (
     <div
