@@ -72,11 +72,10 @@ const Features = () => {
 
             <div>
               <h3 className='mb-2 text-lg font-semibold text-gray-100 md:text-xl'>
-                Dark Mode
+                Versatile Branding
               </h3>
               <p className='mb-2 text-gray-100'>
-                Generate logos in both light and dark modes, tailored to suit
-                your specific requirements.
+                Empower Your Brand with Custom Logos, Names, and Slogans
               </p>
             </div>
           </div>

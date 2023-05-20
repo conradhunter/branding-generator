@@ -4,7 +4,7 @@ import SuccessButton from '~/components/buttons/SuccessButton';
 
 const SuccessPage: NextPage = () => {
   return (
-    <div className='flex h-screen w-full items-center justify-center bg-slate-800 p-20 md:mx-auto'>
+    <div className='flex h-[calc(100vh-72px)] w-full items-center justify-center bg-slate-800 p-20 md:mx-auto'>
       <div>
         <svg
           viewBox='0 0 24 24'
@@ -17,7 +17,7 @@ const SuccessPage: NextPage = () => {
         </svg>
         <div className='text-center'>
           <h3 className='text-center text-base font-semibold text-gray-200 md:text-2xl'>
-            Payment Done!
+            Payment Successful!
           </h3>
           <p className='mb-6 mt-2 text-gray-100'>
             Thank you for completing your secure online payment.

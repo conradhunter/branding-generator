@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CaretDown from '../icons/CaretDown';
 import Close from '../icons/Close';
 import { useUser } from '@clerk/nextjs';
@@ -19,12 +19,37 @@ const MobileNav = ({
   const user = useUser();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [isScreenBig, setIsScreenBig] = useState<boolean>(false);
+
+  useEffect(() => {
+    function handleResize() {
+      const isBigScreen = window.innerWidth > 767;
+      setIsScreenBig(isBigScreen);
+      if (isBigScreen) {
+        setIsMobileMenuOpen(false);
+      }
+      if (!isMobileMenuOpen) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    // Initial check on component mount
+    handleResize();
+
+    // Event listener for screen resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [setIsMobileMenuOpen]);
 
   return (
     <div
-      className={`border-1 ${
+      className={`border-1 ${isScreenBig && 'hidden'} ${
         isMobileMenuOpen ? 'block' : 'hidden'
-      } absolute right-6 top-24 h-fit w-2/3 max-w-sm rounded-2xl border-slate-900 bg-slate-700 px-14 py-16 shadow-sm`}
+      } absolute right-1/2 top-24 h-fit w-11/12 max-w-md translate-x-1/2 transform rounded-2xl border-slate-900 bg-slate-700 px-14 py-16 shadow-sm md:w-auto`}
     >
       <Close
         setIsMobileMenuOpen={setIsMobileMenuOpen}

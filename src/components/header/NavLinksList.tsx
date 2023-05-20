@@ -5,8 +5,8 @@ import ButtonSignIn from '../buttons/ButtonSignIn';
 import ButtonLoading from '../buttons/ButtonLoading';
 import BuyCreditsButton from '../buttons/BuyCreditsButton';
 import Link from 'next/link';
-import CaretDown from '../icons/CaretDown';
 import { useState } from 'react';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const NavLinksList = () => {
   const user = useUser();
@@ -29,7 +29,7 @@ const NavLinksList = () => {
           onMouseLeave={handleMouseLeave}
           className='flex items-center'
         >
-          Generate <CaretDown isDropdownOpen />
+          Generate <KeyboardArrowDownIcon />
         </button>
         <ul
           onMouseEnter={handleMouseEnter}

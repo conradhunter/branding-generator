@@ -14,6 +14,7 @@ const nextConfig = {
     NEXT_PUBLIC_STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     CREDITS_PRODUCT_ID: process.env.CREDITS_PRODUCT_ID,
+    STRIPE_WEBHOOK_SIGNING_SECRET: process.env.STRIPE_WEBHOOK_SIGNING_SECRET,
   },
   images: {
     domains: [

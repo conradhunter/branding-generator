@@ -9,6 +9,7 @@ export default authMiddleware({
     '/example',
     '/sign-in',
     '/sign-up',
+    '/api/stripe/webhook',
   ],
 });
 
