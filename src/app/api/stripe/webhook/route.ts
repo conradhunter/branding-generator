@@ -16,9 +16,12 @@ export async function POST(request, response) {
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object;
 
-      await fetch('http://localhost:3000/api/clerk/deduct-credits', {
-        method: 'POST',
-      });
+      await fetch(
+        'http://www.brandinggeneratorai.com/api/clerk/deduct-credits',
+        {
+          method: 'POST',
+        }
+      );
 
       console.log(session);
       // Fulfill the purchase...

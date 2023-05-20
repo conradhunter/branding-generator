@@ -20,8 +20,7 @@ export async function POST(request: NextRequest) {
       currency: 'usd',
 
       // success_url: 'http://localhost:3000/success',
-
-      success_url: 'https://branding-generator.vercel.app/success',
+      success_url: 'http://www.brandinggeneratorai.com/success',
       cancel_url: 'http://localhost:3000/cancel',
       allow_promotion_codes: true,
     });
