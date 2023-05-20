@@ -16,4 +16,7 @@ export async function POST(request: any, response: any) {
     console.error(err);
     return response.status(400).send(`Webhook Error: ${err}`);
   }
+  await fetch('http://localhost:3000/api/clerk/deduct-credits', {
+    method: 'POST',
+  });
 }
