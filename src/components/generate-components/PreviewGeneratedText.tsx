@@ -1,15 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CopyToClipboard from '../icons/CopyToClipboard';
 import TextSkeleton from '../skeleton-placeholders/TextSkeleton';
 
 type PreviewGeneratedTextProps = {
   name: string;
+  generatedText: { text: string }[];
 };
 
-const PreviewGeneratedText = ({ name }: PreviewGeneratedTextProps) => {
+const PreviewGeneratedText = ({
+  name,
+  generatedText,
+}: PreviewGeneratedTextProps) => {
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (generatedText && generatedText.length > 0) {
+      // Check if generatedName is not null and has at least one item
+      setLoading(false);
+    }
+  }, [generatedText]);
 
   return (
     <section>
@@ -31,11 +42,22 @@ const PreviewGeneratedText = ({ name }: PreviewGeneratedTextProps) => {
       <div className='flex w-full items-center justify-center rounded-2xl bg-gray-700 py-10 shadow-xl'>
         <div className='relative'>
           {!loading && (
-            <button className='absolute right-4 top-4 z-10 cursor-pointer text-slate-300 duration-200 hover:text-slate-100'>
+            <button
+              onClick={() =>
+                navigator.clipboard.writeText(generatedText[0].text)
+              }
+              className='absolute right-4 top-4 z-10 cursor-pointer text-slate-300 duration-200 hover:text-slate-100'
+            >
               <CopyToClipboard />
             </button>
           )}
-          <TextSkeleton />
+          {loading ? (
+            <TextSkeleton />
+          ) : (
+            <div className='flex min-h-[208px] flex-col items-center justify-center gap-2 text-gray-100'>
+              {generatedText[0].text}
+            </div>
+          )}
         </div>
       </div>
     </section>

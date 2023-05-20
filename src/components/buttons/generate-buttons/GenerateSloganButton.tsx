@@ -5,9 +5,13 @@ import { generateSlogan } from '~/utils/openAI/init';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
+  generateSloganHandler: (prompt: string) => void;
 };
 
-const GenerateSloganButton = ({ sloganPrompt }: GenerateSloganButtonProps) => {
+const GenerateSloganButton = ({
+  sloganPrompt,
+  generateSloganHandler,
+}: GenerateSloganButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.publicMetadata.credits || 0;
@@ -25,7 +29,7 @@ const GenerateSloganButton = ({ sloganPrompt }: GenerateSloganButtonProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateSlogan(sloganPrompt)}
+          onClick={() => generateSloganHandler(sloganPrompt)}
         >
           Generate
         </button>

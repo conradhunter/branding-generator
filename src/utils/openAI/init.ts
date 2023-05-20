@@ -1,5 +1,4 @@
 import { Configuration, OpenAIApi } from 'openai';
-import { useState } from 'react';
 
 const configuration = new Configuration({
   apiKey: process.env.DALL_E_API_KEY,
@@ -40,13 +39,14 @@ export async function generateLogo(logoPrompt: string, resolution: string) {
   return imageUrl;
 }
 
-let namesResponse: any;
+export let namesResponse: any;
 
 export async function generateBusinessName(prompt: string) {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: prompt,
-    n: 10,
+    temperature: 1.4,
+    n: 1,
     max_tokens: 10,
   });
 
@@ -60,14 +60,16 @@ export async function generateBusinessName(prompt: string) {
   }
 
   console.log(namesResponse?.data.choices);
+  return namesResponse?.data.choices; // Return the generated names
 }
 
-let sloganResponse: any;
+export let sloganResponse: any;
 
 export async function generateSlogan(prompt: string) {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: prompt,
+    temperature: 1.4,
     n: 1,
     max_tokens: 10,
   });
@@ -80,4 +82,7 @@ export async function generateSlogan(prompt: string) {
     console.log('error deducting credits');
     console.error(response);
   }
+
+  console.log(sloganResponse?.data.choices);
+  return sloganResponse?.data.choices; // Return the generated slogan
 }

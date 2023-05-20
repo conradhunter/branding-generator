@@ -5,9 +5,13 @@ import { generateBusinessName } from '~/utils/openAI/init';
 
 type GenerateNameButtonProps = {
   finalNamePrompt: string;
+  generateNames: (prompt: string) => void;
 };
 
-const GenerateNameButton = ({ finalNamePrompt }: GenerateNameButtonProps) => {
+const GenerateNameButton = ({
+  finalNamePrompt,
+  generateNames,
+}: GenerateNameButtonProps) => {
   const user = useUser();
 
   const credits = user.user?.publicMetadata.credits || 0;
@@ -25,7 +29,7 @@ const GenerateNameButton = ({ finalNamePrompt }: GenerateNameButtonProps) => {
               : 'cursor-not-allowed opacity-50'
           }`}
           disabled={!canGenerate}
-          onClick={() => generateBusinessName(finalNamePrompt)}
+          onClick={() => generateNames(finalNamePrompt)}
         >
           Generate
         </button>

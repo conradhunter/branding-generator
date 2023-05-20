@@ -1,14 +1,14 @@
 'use client';
 
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import GenerateNameButton from '../../buttons/generate-buttons/GenerateNameButton';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 import PreviewGeneratedText from '../PreviewGeneratedText';
+import { generateBusinessName, namesResponse } from '~/utils/openAI/init';
 
 type NamePromptData = {
   industry: string;
-  productOrService: string;
   keyWords: string;
   temperature: number;
 };
@@ -16,13 +16,13 @@ type NamePromptData = {
 const NameGenerateForm = () => {
   const initialState: NamePromptData = {
     industry: '',
-    productOrService: '',
     keyWords: '',
     temperature: 1,
   };
 
   const [nameFormValues, setNameFormValues] =
     useState<NamePromptData>(initialState);
+  const [generatedName, setGeneratedName] = useState<any>();
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement>,
@@ -38,12 +38,16 @@ const NameGenerateForm = () => {
     setNameFormValues(initialState);
   };
 
+  let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry. make use of some of these keywords "${nameFormValues.keyWords}"`;
+  const generateNames = async (prompt: string) => {
+    await generateBusinessName(prompt);
+    setGeneratedName(namesResponse?.data.choices || []);
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     resetForm(initialState);
   }
-
-  let finalNamePrompt: string = `Generate a business name for a business from the ${nameFormValues.industry} industry which sells ${nameFormValues.productOrService}. Some keywords about the business include ${nameFormValues.keyWords}`;
 
   return (
     <>
@@ -56,28 +60,29 @@ const NameGenerateForm = () => {
           <Label content={'Industry'} />
           <InputText
             value={nameFormValues.industry}
+            placeholder='e.g tourism'
             onChange={(event) => handleInputChange(event, 'industry')}
-          />
-        </div>
-        <div className='mb-6'>
-          <Label content={'Product or Service'} />
-          <InputText
-            value={nameFormValues.productOrService}
-            onChange={(event) => handleInputChange(event, 'productOrService')}
           />
         </div>
         <div className='mb-6'>
           <Label content={'Keywords'} />
           <InputText
             value={nameFormValues.keyWords}
+            placeholder='e.g tropical, beach'
             onChange={(event) => handleInputChange(event, 'keyWords')}
           />
         </div>
         <div className='flex w-full items-center justify-center'>
-          <GenerateNameButton finalNamePrompt={finalNamePrompt} />
+          <GenerateNameButton
+            generateNames={generateNames}
+            finalNamePrompt={finalNamePrompt}
+          />
         </div>
       </form>
-      <PreviewGeneratedText name={'name'} />
+      <PreviewGeneratedText
+        name={'name'}
+        generatedText={generatedName}
+      />
     </>
   );
 };

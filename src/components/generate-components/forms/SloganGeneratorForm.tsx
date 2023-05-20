@@ -4,8 +4,8 @@ import React, { ChangeEvent, useState } from 'react';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 import GenerateSloganButton from '~/components/buttons/generate-buttons/GenerateSloganButton';
-import { openai } from '~/utils/openAI/init';
 import PreviewGeneratedText from '../PreviewGeneratedText';
+import { generateSlogan, sloganResponse } from '~/utils/openAI/init';
 
 export type LogoPromptData = {
   productOrService: string;
@@ -20,6 +20,7 @@ const SloganGeneratorForm = () => {
 
   const [logoPromptData, setLogoPromptData] =
     useState<LogoPromptData>(initialState);
+  const [generatedSlogan, setGeneratedSlogan] = useState<any>();
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
@@ -35,12 +36,17 @@ const SloganGeneratorForm = () => {
     setLogoPromptData(initialState);
   };
 
+  let sloganPrompt: string = `Generate a slogan for ${logoPromptData.productOrService} company using the keywords ${logoPromptData.keyWord}`;
+
+  const generateSloganHandler = async (prompt: string) => {
+    await generateSlogan(prompt);
+    setGeneratedSlogan(sloganResponse?.data.choices || []);
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     resetForm(initialState);
   }
-
-  let sloganPrompt: string = `Generate a slogan for ${logoPromptData.productOrService} company using the keywords ${logoPromptData.keyWord}`;
 
   return (
     <>
@@ -64,10 +70,16 @@ const SloganGeneratorForm = () => {
           />
         </div>
         <div className='flex w-full items-center justify-center'>
-          <GenerateSloganButton sloganPrompt={sloganPrompt} />
+          <GenerateSloganButton
+            generateSloganHandler={generateSloganHandler}
+            sloganPrompt={sloganPrompt}
+          />
         </div>
       </form>
-      <PreviewGeneratedText name={'slogan'} />
+      <PreviewGeneratedText
+        name={'slogan'}
+        generatedText={generatedSlogan}
+      />
     </>
   );
 };
