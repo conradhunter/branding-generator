@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
+import { useState } from 'react';
 
 const configuration = new Configuration({
   apiKey: process.env.DALL_E_API_KEY,
@@ -15,7 +16,7 @@ async function deductCredits() {
   return response;
 }
 
-let imageUrl: any;
+export let imageUrl: any;
 
 export async function generateLogo(logoPrompt: string, resolution: string) {
   const response = await openai.createImage({

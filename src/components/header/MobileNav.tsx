@@ -6,6 +6,7 @@ import CaretDown from '../icons/CaretDown';
 import Close from '../icons/Close';
 import { useUser } from '@clerk/nextjs';
 import { SignInButton, SignOutButton } from '@clerk/clerk-react';
+import { handleBuyCredits } from '~/lib/stripe';
 
 interface MobileNavProps {
   isMobileMenuOpen: boolean;
@@ -80,12 +81,12 @@ const MobileNav = ({
             <li className=''>Slogan</li>
           </Link>
         </ul>
-        <Link href='/'>
+        <Link href='/examples'>
           <li className='mb-4'>Examples</li>
         </Link>
-        <Link href='/'>
+        <button onClick={handleBuyCredits}>
           <li className='mb-4'>Buy Credits</li>
-        </Link>
+        </button>
       </ul>
       {user.isSignedIn ? (
         <SignOutButton>

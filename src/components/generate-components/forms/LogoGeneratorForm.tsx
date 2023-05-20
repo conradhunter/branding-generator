@@ -3,9 +3,10 @@
 import React, { ChangeEvent, useState } from 'react';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
-import GenerateButton from '~/components/buttons/generate-buttons/GenerateLogoButton';
 import Select from '../form-inputs/Select';
 import PreviewGeneratedBranding from '../PreviewGeneratedLogo';
+import { generateLogo } from '~/utils/openAI/init';
+import { SignInButton, useUser } from '@clerk/nextjs';
 
 export type LogoPromptData = {
   subject: string;
@@ -45,6 +46,20 @@ const LogoGeneratorForm = () => {
     resetForm(initialState);
   }
 
+  const [logoImageUrl, setLogoImageUrl] = useState<string | null>(null);
+
+  const handleGenerateLogo = async (prompt: string, resolution: string) => {
+    const imageUrl = await generateLogo(prompt, resolution);
+    setLogoImageUrl(imageUrl);
+  };
+
+  const user = useUser();
+
+  const credits = user.user?.publicMetadata.credits || 0;
+
+  const canGenerate =
+    user.isSignedIn && typeof credits === 'number' && credits >= 5;
+
   return (
     <>
       <form
@@ -76,13 +91,28 @@ const LogoGeneratorForm = () => {
           />
         </div>
         <div className='flex w-full items-center justify-center'>
-          <GenerateButton
-            logoPrompt={logoPrompt}
-            resolution={resolution}
-          />
+          {user.isSignedIn ? (
+            <button
+              className={`rounded-md bg-violet-400 px-6 py-2 text-lg uppercase text-white shadow-lg duration-150 ${
+                canGenerate
+                  ? 'hover:bg-violet-500'
+                  : 'cursor-not-allowed opacity-50'
+              }`}
+              disabled={!canGenerate}
+              onClick={() => handleGenerateLogo(logoPrompt, resolution)}
+            >
+              Generate
+            </button>
+          ) : (
+            <SignInButton>
+              <button className='rounded-md bg-violet-400 px-6 py-2 text-lg uppercase text-white shadow-lg duration-150 hover:bg-violet-500'>
+                Sign In
+              </button>
+            </SignInButton>
+          )}
         </div>
       </form>
-      <PreviewGeneratedBranding />
+      <PreviewGeneratedBranding logoImageUrl={logoImageUrl} />
     </>
   );
 };

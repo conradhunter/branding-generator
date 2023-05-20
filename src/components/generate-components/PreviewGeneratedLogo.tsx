@@ -1,12 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ImageSkeleton from '../skeleton-placeholders/ImageSkeleton';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Image from 'next/image';
+import DownloadButton from '../buttons/DownloadButton';
+interface PreviewGeneratedLogoProps {
+  logoImageUrl: string | null;
+}
 
-const PreviewGeneratedLogo = () => {
+const PreviewGeneratedLogo = ({ logoImageUrl }: PreviewGeneratedLogoProps) => {
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (logoImageUrl) {
+      setLoading(false);
+    }
+  }, [logoImageUrl]);
 
   return (
     <section>
@@ -27,16 +36,12 @@ const PreviewGeneratedLogo = () => {
       )}
       <div className='flex w-full items-center justify-center rounded-2xl bg-gray-700 py-10 shadow-xl'>
         <div className='relative'>
-          {!loading && (
-            <button className='absolute right-4 top-4 z-10 cursor-pointer text-slate-300 duration-200 hover:text-slate-100'>
-              <FileDownloadIcon />
-            </button>
-          )}
+          {!loading && <DownloadButton logoImageUrl={logoImageUrl} />}
           {loading ? (
             <ImageSkeleton />
           ) : (
             <Image
-              src={'/images/generated-logo.png'}
+              src={logoImageUrl!}
               alt='Generated logo'
               width={208}
               height={208}
