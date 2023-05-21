@@ -1,12 +1,36 @@
 //ignore typescript
 // @ts-nocheck
-
+import type { User } from '@clerk/nextjs/api';
+import { Webhook } from 'svix';
 import { headers } from 'next/headers';
+
+type UnwantedKeys =
+  | 'emailAddresses'
+  | 'firstName'
+  | 'lastName'
+  | 'primaryEmailAddressId'
+  | 'primaryPhoneNumberId'
+  | 'phoneNumbers';
+
+interface UserInterface extends Omit<User, UnwantedKeys> {
+  email_addresses: {
+    email_address: string;
+    id: string;
+  }[];
+  primary_email_address_id: string;
+  first_name: string;
+  last_name: string;
+  primary_phone_number_id: string;
+  phone_numbers: {
+    phone_number: string;
+    id: string;
+  }[];
+}
 
 const webhookSecret: string = process.env.CLERK_WEBHOOK_SECRET || '';
 
-export async function POST(request: Request) {
-  const payload = await request.json();
+export async function POST(req) {
+  const payload = await req.json();
   const payloadString = JSON.stringify(payload);
   const headerPayload = headers();
   const svixId = headerPayload.get('svix-id');
@@ -36,7 +60,6 @@ export async function POST(request: Request) {
     });
   }
   const { id } = evt.data;
-
   // Handle the webhook
   const eventType: EventType = evt.type;
   if (eventType === 'user.created') {
@@ -50,9 +73,18 @@ export async function POST(request: Request) {
       });
     }
     console.log('doing something');
+    // TODO handle call to add-initial-credits API route
   }
   console.log(`User ${id} was ${eventType}`);
   return new Response('', {
     status: 201,
   });
 }
+
+type Event = {
+  data: UserInterface;
+  object: 'event';
+  type: EventType;
+};
+
+type EventType = 'user.created' | 'user.updated' | '*';

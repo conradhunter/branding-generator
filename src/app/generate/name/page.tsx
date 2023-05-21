@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
+import BuyCreditsLink from '~/components/buttons/BuyCreditsLink';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import NameGenerateForm from '~/components/generate-components/forms/NameGenerateForm';
 import { handleBuyCredits } from '~/lib/stripe';
@@ -12,13 +13,7 @@ const NameGeneratorPage: NextPage = () => {
       </h1>
 
       <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-        Name generation costs 5 credits per name suggestion.{' '}
-        <button
-          className='underline'
-          onClick={handleBuyCredits}
-        >
-          Purchase credits here.
-        </button>
+        Name generation costs 5 credits per name suggestion. <BuyCreditsLink />
       </p>
 
       <DisplayCredits />

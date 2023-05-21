@@ -25,6 +25,13 @@ export async function POST(req: any) {
 
   switch (event.type) {
     case 'checkout.session.completed':
+      await fetch('http://localhost:3000/api/clerk/add-credits', {
+        method: 'POST',
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
+
       break;
     default:
       console.log(`Unhandled event type ${event.type}`);
