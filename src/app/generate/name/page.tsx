@@ -12,7 +12,7 @@ const NameGeneratorPage: NextPage = () => {
       </h1>
 
       <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
-        Name generation costs 20 credits for 10 name suggestions.{' '}
+        Name generation costs 5 credits per name suggestions.{' '}
         <Link
           className='underline'
           href=''

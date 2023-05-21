@@ -5,7 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata = {
   title: 'Branding Generator AI',
-  description: 'An Branding Generator app powered by the Dall-E API',
+  description: 'An Branding Generator app powered by the OpenAI API',
 };
 
 export default function RootLayout({

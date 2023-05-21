@@ -40,7 +40,7 @@ export const Footer: FunctionComponent = () => {
             </li>
             <li>
               <Link
-                href=''
+                href='/terms-and-conditions'
                 className='hover:underline'
               >
                 Terms & Conditions
