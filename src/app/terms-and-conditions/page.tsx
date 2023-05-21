@@ -6,10 +6,10 @@ const page = () => {
       <div className='text-gray-100'>
         <h1 className='mb-4 text-4xl'>Terms and Conditions</h1>
         <p className='mb-4'>
-          These terms and conditions ("Agreement") govern your access to and use
-          of BrandingGeneratorAI ("the Service") provided by
-          BrandingGeneratorAI, Inc. ("the Company"). By using the Service, you
-          agree to be bound by this Agreement.
+          These terms and conditions (&quot;Agreement&quot;) govern your access
+          to and use of BrandingGeneratorAI (&quot;the Service&quot;) provided
+          by BrandingGeneratorAI, Inc. (&quot;the Company&quot;). By using the
+          Service, you agree to be bound by this Agreement.
         </p>
 
         <h2 className='mb-2 text-2xl'>1. Description of Service</h2>
@@ -66,10 +66,10 @@ const page = () => {
 
         <h2 className='mb-2 text-2xl'>6. Disclaimer of Warranty</h2>
         <p className='mb-4'>
-          The Service is provided "as is" and without warranties of any kind,
-          whether express or implied. The Company does not warrant that the
-          Service will be error-free, uninterrupted, or secure. Your use of the
-          Service is at your own risk.
+          The Service is provided &quot;as is&quot; and without warranties of
+          any kind, whether express or implied. The Company does not warrant
+          that the Service will be error-free, uninterrupted, or secure. Your
+          use of the Service is at your own risk.
         </p>
 
         <h2 className='mb-2 text-2xl'>7. Limitation of Liability</h2>

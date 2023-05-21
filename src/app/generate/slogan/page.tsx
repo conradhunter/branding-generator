@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import React from 'react';
-import Link from 'next/link';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import SloganGeneratorForm from '~/components/generate-components/forms/SloganGeneratorForm';
+import { handleBuyCredits } from '~/lib/stripe';
 
 const SloganGeneratorPage: NextPage = () => {
   return (
@@ -14,12 +14,12 @@ const SloganGeneratorPage: NextPage = () => {
 
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
           Slogan generation costs 5 credits.{' '}
-          <Link
+          <button
             className='underline'
-            href=''
+            onClick={handleBuyCredits}
           >
             Purchase credits here.
-          </Link>
+          </button>
         </p>
 
         <DisplayCredits />

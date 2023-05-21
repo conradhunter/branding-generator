@@ -1,8 +1,7 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import LogoGeneratorForm from '~/components/generate-components/forms/LogoGeneratorForm';
-import PreviewGeneratedBranding from '~/components/generate-components/PreviewGeneratedLogo';
+import { handleBuyCredits } from '~/lib/stripe';
 
 const LogoGeneratePage: NextPage = () => {
   return (
@@ -14,12 +13,12 @@ const LogoGeneratePage: NextPage = () => {
 
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>
           Logo generation costs 5 credits per logo generation.{' '}
-          <Link
+          <button
             className='underline'
-            href=''
+            onClick={handleBuyCredits}
           >
             Purchase credits here.
-          </Link>
+          </button>
         </p>
 
         <p className='mb-6 leading-relaxed text-gray-100 md:mb-9 lg:w-4/5 xl:text-lg'>

@@ -1,6 +1,6 @@
 import Cloud from '../icons/Cloud';
-import DarkMode from '../icons/DarkMode';
 import Dollar from '../icons/Dollar';
+import List from '../icons/List';
 
 const Features = () => {
   return (
@@ -67,7 +67,7 @@ const Features = () => {
           </div>
           <div className='flex gap-4 md:gap-6'>
             <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-violet-400 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl'>
-              <DarkMode />
+              <List />
             </div>
 
             <div>
