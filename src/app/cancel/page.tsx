@@ -13,21 +13,21 @@ const page = () => {
         >
           <g
             id='SVGRepo_bgCarrier'
-            stroke-width='0'
+            strokeWidth='0'
           ></g>
           <g
             id='SVGRepo_tracerCarrier'
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           ></g>
           <g id='SVGRepo_iconCarrier'>
             {' '}
             <path
               d='M16 8L8 16M8.00001 8L16 16'
               stroke='#1E293B'
-              stroke-width='1.508'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='1.508'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             ></path>{' '}
           </g>
         </svg>

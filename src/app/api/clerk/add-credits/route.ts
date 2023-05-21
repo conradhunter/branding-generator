@@ -15,7 +15,7 @@ export async function GET() {
       },
     });
     NextResponse.json({ success: true, user: updatedUser });
-    console.log('deducted credits');
+    console.log('added credits');
   } catch (err) {
     console.error('error deducting credits', err);
   }
