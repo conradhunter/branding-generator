@@ -4,6 +4,8 @@
 // import { Webhook } from 'svix';
 // import { headers } from 'next/headers';
 
+import { NextResponse } from 'next/server';
+
 // type UnwantedKeys =
 //   | 'emailAddresses'
 //   | 'firstName'
@@ -89,4 +91,6 @@
 
 // type EventType = 'user.created' | 'user.updated' | '*';
 
-export async function GET() {}
+export async function GET(req: any) {
+  return NextResponse.json({ success: true }, { status: 200 });
+}
