@@ -1,14 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { buffer } from 'node:stream/consumers';
 import { stripe } from '~/lib/stripe';
 
-export async function POST(req: any) {
-  const rawBody = await buffer(req.body);
+export async function POST(request: any, response: NextResponse) {
+  const rawBody = await buffer(request.body);
   let event;
   try {
     event = stripe.webhooks.constructEvent(
       rawBody,
-      req.headers.get('stripe-signature') as string,
+      request.headers.get('stripe-signature') as string,
       process.env.STRIPE_WEBHOOK_SIGNING_SECRET as string
     );
   } catch (err) {
@@ -23,17 +23,13 @@ export async function POST(req: any) {
     );
   }
 
-  switch (event.type) {
-    case 'checkout.session.completed':
-      const reqUrl = new URL(req.url);
+  if (event.type === 'checkout.session.completed') {
+    const reqUrl = new URL(request.url);
 
-      await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
-        method: 'GET',
-      });
-      console.log('✅ checkout session completed webhook received');
-      break;
-    default:
-      console.log(`Unhandled event type ${event.type}`);
+    await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
+      method: 'GET',
+    });
+    console.log('✅ checkout session completed webhook received');
   }
 
   // have to return response promptly, ie without waiting for back-end process or stripe will potentially flag your account
