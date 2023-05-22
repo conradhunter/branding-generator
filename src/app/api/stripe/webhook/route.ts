@@ -25,13 +25,15 @@ export async function POST(req: any) {
 
   switch (event.type) {
     case 'checkout.session.completed':
-      await fetch('http://localhost:3000/api/clerk/add-credits', {
-        method: 'POST',
+      const reqUrl = new URL(req.url);
+
+      await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
+        method: 'GET',
         headers: {
           'Cache-Control': 'no-cache',
         },
       });
-
+      console.log('✅ checkout session completed webhook received');
       break;
     default:
       console.log(`Unhandled event type ${event.type}`);

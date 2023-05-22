@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import BuyCreditsLink from '~/components/buttons/BuyCreditsLink';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import LogoGeneratorForm from '~/components/generate-components/forms/LogoGeneratorForm';
-import { handleBuyCredits } from '~/lib/stripe';
 
 const LogoGeneratePage: NextPage = () => {
   return (
