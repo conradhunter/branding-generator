@@ -29,9 +29,6 @@ export async function POST(req: any) {
 
       await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
         method: 'GET',
-        headers: {
-          'Cache-Control': 'no-cache',
-        },
       });
       console.log('✅ checkout session completed webhook received');
       break;

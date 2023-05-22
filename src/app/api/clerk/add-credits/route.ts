@@ -1,7 +1,15 @@
 import { auth, clerkClient } from '@clerk/nextjs/server';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: any, res: any) {
+export async function GET(req: NextRequest, res: NextResponse) {
+  res.headers.set('Access-Control-Allow-Origin', '*');
+  res.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.headers.set(
+    'Access-Control-Allow-Headers',
+    'Content-Type, Authorization'
+  );
+  res.headers.set('Access-Control-Allow-Credentials', 'true');
+
   const { userId } = auth();
   if (typeof userId !== 'string') return;
 
