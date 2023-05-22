@@ -88,3 +88,5 @@
 // };
 
 // type EventType = 'user.created' | 'user.updated' | '*';
+
+export async function GET() {}
