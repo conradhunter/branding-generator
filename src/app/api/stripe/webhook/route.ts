@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { buffer } from 'node:stream/consumers';
 import { stripe } from '~/lib/stripe';
 
-export let event: any;
 export async function POST(request: any, response: NextResponse) {
   const rawBody = await buffer(request.body);
+  let event: any;
   try {
     event = stripe.webhooks.constructEvent(
       rawBody,
