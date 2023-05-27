@@ -10,6 +10,9 @@ export default authMiddleware({
     '/sign-in',
     '/sign-up',
     '/api/stripe/webhook',
+    '/success',
+    '/api/stripe/webhook',
+    '/api/clerk/add-credits',
   ],
 });
 

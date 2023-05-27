@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { buffer } from 'node:stream/consumers';
 import { stripe } from '~/lib/stripe';
 
+export let event: any;
 export async function POST(request: any, response: NextResponse) {
   const rawBody = await buffer(request.body);
-  let event;
   try {
     event = stripe.webhooks.constructEvent(
       rawBody,
@@ -24,12 +24,18 @@ export async function POST(request: any, response: NextResponse) {
   }
 
   if (event.type === 'checkout.session.completed') {
-    const reqUrl = new URL(request.url);
+    // const reqUrl = new URL(request.url);
 
-    await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
+    console.log('✅ checkout session completed webhook received');
+
+    await fetch(`https://brandinggeneratorai.com/api/clerk/add-credits`, {
       method: 'GET',
     });
-    console.log('✅ checkout session completed webhook received');
+    console.log('✅ credits added');
+    return NextResponse.json(
+      { message: 'successfully received' },
+      { status: 200 }
+    );
   }
 
   // have to return response promptly, ie without waiting for back-end process or stripe will potentially flag your account
