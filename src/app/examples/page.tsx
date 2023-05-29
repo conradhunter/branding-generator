@@ -12,6 +12,7 @@ const ExamplesPage: NextPage = () => {
         <Image
           src='./loading-undraw.svg'
           alt='Coming soon...'
+          placeholder='blur'
           width={300}
           height={300}
         />

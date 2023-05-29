@@ -14,6 +14,7 @@ export const Footer: FunctionComponent = () => {
           >
             <Image
               src={logo}
+              placeholder='blur'
               className='mr-3 h-8 w-8 rounded-lg'
               alt='Flowbite Logo'
             />

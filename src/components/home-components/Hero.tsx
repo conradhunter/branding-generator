@@ -32,6 +32,7 @@ const Hero = () => {
           <div className='h-48 overflow-hidden rounded-lg lg:h-auto xl:w-5/12'>
             <Image
               src={undrawAI}
+              placeholder='blur'
               alt=''
               className='h-full w-full'
             />

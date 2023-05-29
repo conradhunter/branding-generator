@@ -63,6 +63,7 @@ const Testimonials = () => {
                       <Image
                         src={testimonial.profileImage}
                         loading='lazy'
+                        placeholder='blur'
                         alt=''
                         height={100}
                         width={100}
