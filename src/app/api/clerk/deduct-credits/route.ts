@@ -2,9 +2,12 @@ import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import prisma from '~/utils/db/prismaInit';
 
-export async function GET() {
+export async function GET(req: any) {
+  const res = await req.json();
+
+  const userId = res.userId;
   try {
-    const { userId } = auth();
+    // const { userId } = auth();
     const userDeductedCredits = await prisma.user.update({
       where: {
         id: userId!,
