@@ -52,19 +52,3 @@ export async function POST(request: any) {
     { status: 200 }
   );
 }
-
-// if (event.type === 'checkout.session.completed') {
-//     const reqUrl = new URL(request.url);
-
-//     console.log('✅ checkout session completed webhook received');
-
-//     await fetch(`${reqUrl.origin}/api/clerk/add-credits`, {
-//       method: 'GET',
-//     });
-
-//     console.log('✅ credits added');
-//     return NextResponse.json(
-//       { message: 'successfully received' },
-//       { status: 200 }
-//     );
-//   }

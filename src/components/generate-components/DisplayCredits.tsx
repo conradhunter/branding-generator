@@ -9,7 +9,7 @@ const DisplayCredits = () => {
 
   useEffect(() => {
     if (user.isSignedIn) {
-      fetch('/api/db/get-users-credits', {
+      fetch('https://brandinggeneratorai.com/api/db/get-users-credits', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

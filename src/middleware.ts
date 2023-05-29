@@ -17,7 +17,7 @@ export default authMiddleware({
     // create DB user if it doesn't exist using Clerk User ID
     const { userId } = auth;
 
-    await fetch('http://localhost:3000/api/db/upsertUser', {
+    await fetch('https://brandinggeneratorai.com/api/db/upsertUser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
