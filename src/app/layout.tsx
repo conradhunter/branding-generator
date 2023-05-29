@@ -7,6 +7,11 @@ export const metadata = {
   title: 'Branding Generator AI',
   description: 'An Branding Generator app powered by the OpenAI API',
 };
+<link
+  rel='icon'
+  href='/logo.png'
+  sizes='any'
+/>;
 
 export default function RootLayout({
   children,
