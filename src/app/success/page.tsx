@@ -3,6 +3,7 @@ import React from 'react';
 import SuccessButton from '~/components/buttons/SuccessButton';
 
 const SuccessPage: NextPage = () => {
+  // .
   return (
     <div className='flex h-[calc(100vh-72px)] w-full items-center justify-center bg-slate-800 p-20 md:mx-auto'>
       <div>
