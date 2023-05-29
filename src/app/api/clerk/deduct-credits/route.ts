@@ -7,7 +7,7 @@ export async function GET() {
     const { userId } = auth();
     const userDeductedCredits = await prisma.user.update({
       where: {
-        id: userId?.toString(),
+        id: userId!,
       },
       data: {
         credits: {
