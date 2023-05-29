@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import prisma from '~/utils/db/prismaInit';
 
-export async function GET(req: any) {
+export async function POST(req: any) {
   const res = await req.json();
 
   const userId = res.userId;
