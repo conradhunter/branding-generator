@@ -12,6 +12,10 @@ async function deductCredits() {
     'https://brandinggeneratorai.com/api/clerk/deduct-credits',
     {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+      },
     }
   );
 
