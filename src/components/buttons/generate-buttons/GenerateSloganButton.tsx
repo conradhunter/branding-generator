@@ -13,7 +13,7 @@ const GenerateSloganButton = ({
   generateSloganHandler,
 }: GenerateSloganButtonProps) => {
   const user = useUser();
-  const [credits, setCredits] = useState<number>();
+  const [credits, setCredits] = useState();
 
   useEffect(() => {
     if (user.isSignedIn) {

@@ -11,7 +11,7 @@ interface promptProps {
 
 const GenerateButton = (props: promptProps) => {
   const user = useUser();
-  const [credits, setCredits] = useState<number>();
+  const [credits, setCredits] = useState();
 
   useEffect(() => {
     if (user.isSignedIn) {
