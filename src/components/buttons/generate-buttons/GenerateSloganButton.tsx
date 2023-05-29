@@ -32,8 +32,7 @@ const GenerateSloganButton = ({
     }
   });
 
-  const canGenerate =
-    user.isSignedIn && typeof credits === 'number' && credits >= 5;
+  const canGenerate = user.isSignedIn && credits >= 5;
 
   return (
     <>
