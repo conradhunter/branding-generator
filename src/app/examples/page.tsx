@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import loading from '../../public/loading_undraw.svg';
 
 const ExamplesPage: NextPage = () => {
   return (
@@ -10,7 +11,7 @@ const ExamplesPage: NextPage = () => {
       </h2>
       <div className='container flex items-center justify-center'>
         <Image
-          src='./loading-undraw.svg'
+          src={loading}
           alt='Coming soon...'
           placeholder='blur'
           width={300}

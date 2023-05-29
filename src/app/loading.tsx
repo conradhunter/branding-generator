@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import loading2 from '../../public/loading_undraw_2.svg';
 
 const loading = () => {
   return (
@@ -7,7 +8,7 @@ const loading = () => {
       <h1 className='text-3xl text-white'>Loading...</h1>
       <div className='container flex items-center justify-center'>
         <Image
-          src='./loading-undraw_2.svg'
+          src={loading2}
           alt='Coming soon...'
           width={300}
           placeholder='blur'
