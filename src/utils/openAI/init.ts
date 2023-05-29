@@ -1,4 +1,3 @@
-import { auth } from '@clerk/nextjs/server';
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -8,16 +7,11 @@ const configuration = new Configuration({
 
 export const openai = new OpenAIApi(configuration);
 
-const { userId } = auth();
 async function deductCredits() {
   const response = await fetch(
     'https://brandinggeneratorai.com/api/clerk/deduct-credits',
     {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userId }),
+      method: 'GET',
     }
   );
 
