@@ -27,7 +27,7 @@ const GenerateButton = (props: promptProps) => {
           credits = data.credits;
         });
     }
-  });
+  }, [user]);
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits >= 5;
