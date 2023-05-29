@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { generateSlogan } from '~/utils/openAI/init';
+import { useEffect } from 'react';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
@@ -14,7 +14,23 @@ const GenerateSloganButton = ({
 }: GenerateSloganButtonProps) => {
   const user = useUser();
 
-  const credits = user.user?.publicMetadata.credits || 0;
+  let credits;
+
+  useEffect(() => {
+    if (user.isSignedIn) {
+      fetch('https://brandinggeneratorai.com/api/db/get-users-credits', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: user.user.id }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          credits = data.credits;
+        });
+    }
+  });
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits >= 5;
