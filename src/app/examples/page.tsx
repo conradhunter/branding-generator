@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import loading from '../../../public.loading-undraw.svg';
+import loading from '../../../public/loading-undraw.svg';
 
 const ExamplesPage: NextPage = () => {
   return (
