@@ -8,12 +8,9 @@ const configuration = new Configuration({
 export const openai = new OpenAIApi(configuration);
 
 async function deductCredits() {
-  const response = await fetch(
-    'https://brandinggeneratorai.com/api/clerk/deduct-credits',
-    {
-      method: 'GET',
-    }
-  );
+  const response = await fetch('/api/clerk/deduct-credits', {
+    method: 'GET',
+  });
 
   return response;
 }
