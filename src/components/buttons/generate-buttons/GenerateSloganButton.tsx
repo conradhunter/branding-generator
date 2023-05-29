@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 type GenerateSloganButtonProps = {
   sloganPrompt: string;
@@ -13,8 +13,7 @@ const GenerateSloganButton = ({
   generateSloganHandler,
 }: GenerateSloganButtonProps) => {
   const user = useUser();
-
-  let credits;
+  const [credits, setCredits] = useState<number>();
 
   useEffect(() => {
     if (user.isSignedIn) {
@@ -27,10 +26,10 @@ const GenerateSloganButton = ({
       })
         .then((res) => res.json())
         .then((data) => {
-          credits = data.credits;
+          setCredits(data.credits);
         });
     }
-  });
+  }, [user]);
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits >= 5;

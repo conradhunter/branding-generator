@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, useUser } from '@clerk/nextjs';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { generateLogo } from '~/utils/openAI/init';
 
 interface promptProps {
@@ -11,7 +11,7 @@ interface promptProps {
 
 const GenerateButton = (props: promptProps) => {
   const user = useUser();
-  let credits;
+  const [credits, setCredits] = useState<number>();
 
   useEffect(() => {
     if (user.isSignedIn) {
@@ -24,7 +24,7 @@ const GenerateButton = (props: promptProps) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          credits = data.credits;
+          setCredits(data.credits);
         });
     }
   }, [user]);
