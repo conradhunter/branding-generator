@@ -7,7 +7,7 @@ import Hamburger from '../buttons/Hamburger';
 
 export const NavBar: FunctionComponent = () => {
   return (
-    <nav className='border-b-2 border-gray-800 bg-white dark:bg-gray-900'>
+    <nav className='border-b-2 border-gray-800 bg-gray-900'>
       <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-8 py-4'>
         <Link
           href='/'
@@ -19,7 +19,7 @@ export const NavBar: FunctionComponent = () => {
             className='mr-3 h-10 w-10 rounded-lg'
             alt='Flowbite Logo'
           />
-          <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
+          <span className='self-center whitespace-nowrap text-xl font-semibold text-white'>
             BrandingGeneratorAI
           </span>
         </Link>

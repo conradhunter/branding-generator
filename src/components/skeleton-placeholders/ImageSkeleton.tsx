@@ -4,7 +4,7 @@ const ImageSkeleton = () => {
       role='status'
       className='animate-pulse space-y-8 md:flex md:items-center md:space-x-8 md:space-y-0'
     >
-      <div className='flex h-52 w-52 items-center justify-center rounded-xl bg-gray-300 dark:bg-gray-600'>
+      <div className='flex h-52 w-52 items-center justify-center rounded-xl bg-gray-600'>
         <svg
           className='h-14 w-14 text-gray-200'
           xmlns='http://www.w3.org/2000/svg'

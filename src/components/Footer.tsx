@@ -5,7 +5,7 @@ import logo from '../../public/logo.png';
 
 export const Footer: FunctionComponent = () => {
   return (
-    <footer className='m-4 rounded-lg bg-white shadow dark:bg-gray-900'>
+    <footer className='m-4 rounded-lg bg-gray-900 shadow'>
       <div className='mx-auto w-full max-w-screen-xl p-4 md:py-8'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <Link
@@ -18,11 +18,11 @@ export const Footer: FunctionComponent = () => {
               className='mr-3 h-8 w-8 rounded-lg'
               alt='Flowbite Logo'
             />
-            <span className='self-center whitespace-nowrap text-2xl font-semibold dark:text-white'>
+            <span className='self-center whitespace-nowrap text-2xl font-semibold text-white'>
               BrandingGeneratorAI
             </span>
           </Link>
-          <ul className='mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0'>
+          <ul className='mb-6 flex flex-wrap items-center text-sm font-medium text-gray-400 sm:mb-0'>
             <li>
               <Link
                 href='/generate/name'
@@ -49,8 +49,8 @@ export const Footer: FunctionComponent = () => {
             </li>
           </ul>
         </div>
-        <hr className='my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8' />
-        <span className='block text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
+        <hr className='my-6 border-gray-700 sm:mx-auto lg:my-8' />
+        <span className='block text-sm text-gray-400 sm:text-center'>
           © 2023 BrandingGeneratorAI™ . All Rights Reserved.
         </span>
       </div>
