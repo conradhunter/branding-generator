@@ -7,18 +7,15 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 export const handleBuyCredits = async () => {
-  const data = await fetch(
-    'https://brandinggeneratorai.com/api/stripe/create-checkout',
-    {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
-      },
-      body: JSON.stringify({ quantity: 1 }),
-    }
-  );
+  const data = await fetch('/api/stripe/create-checkout', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
+    },
+    body: JSON.stringify({ quantity: 1 }),
+  });
 
   if (!data.ok) {
     return new Error('Failed to create order');
