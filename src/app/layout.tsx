@@ -6,12 +6,10 @@ import { ClerkProvider } from '@clerk/nextjs';
 export const metadata = {
   title: 'Branding Generator AI',
   description: 'An Branding Generator app powered by the OpenAI API',
+  icons: {
+    icon: '/logo.png',
+  },
 };
-<link
-  rel='icon'
-  href='/logo.png'
-  sizes='any'
-/>;
 
 export default function RootLayout({
   children,
