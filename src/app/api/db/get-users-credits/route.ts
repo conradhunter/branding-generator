@@ -15,7 +15,7 @@ export async function POST(req: any) {
 
   if (user) {
     return NextResponse.json({ success: true, credits: user.credits });
+  } else {
+    return NextResponse.json({ status: 404, message: 'User not found' });
   }
-
-  return NextResponse.json({ status: 404, message: 'User not found' });
 }
