@@ -1,22 +1,23 @@
-import { auth, clerkClient } from '@clerk/nextjs/server';
+import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
+import prisma from '~/utils/db/prismaInit';
 
 export async function GET() {
-  const { userId } = auth();
-  if (typeof userId !== 'string') return;
-
-  const user = await clerkClient.users.getUser(userId);
-  const credits: any = user.publicMetadata.credits;
-
   try {
-    const updatedUser = await clerkClient.users.updateUserMetadata(userId, {
-      publicMetadata: {
-        credits: credits - 5,
+    const { userId } = auth();
+    const userDeductedCredits = await prisma.user.update({
+      where: {
+        id: userId?.toString(),
+      },
+      data: {
+        credits: {
+          decrement: 5,
+        },
       },
     });
-    NextResponse.json({ success: true, user: updatedUser });
-    console.log('deducted credits');
+    console.log('deducted credits', userDeductedCredits);
   } catch (err) {
     console.error('error deducting credits', err);
   }
+  return NextResponse.json({ success: true });
 }

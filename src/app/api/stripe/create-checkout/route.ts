@@ -1,7 +1,10 @@
 import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
+import { auth } from '@clerk/nextjs/server';
 
 export async function POST(request: NextRequest) {
+  const { userId } = auth();
+
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2022-11-15',
     typescript: true,
@@ -16,6 +19,10 @@ export async function POST(request: NextRequest) {
           quantity: 1,
         },
       ],
+
+      metadata: {
+        userId: userId,
+      },
 
       currency: 'usd',
 

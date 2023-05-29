@@ -12,23 +12,8 @@ datasource db {
 }
 
 model User {
-  id      String @id @default(cuid())
-  email   String @unique
-  credits Int    @default(5)
-}
-
-model generatedSlogan {
-  id        String   @id @default(cuid())
-  slogan    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String?
-}
-
-model generatedBusinessName {
-  id        String   @id @default(cuid())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String?
+  id        String    @id @unique
+  email     String?   @unique
+  createdAt DateTime? @default(now())
+  credits   Int?      @default(0)
 }

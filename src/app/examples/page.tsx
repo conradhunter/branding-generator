@@ -2,29 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 
 const ExamplesPage: NextPage = () => {
-  const images = [
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-    'https://images.clerk.dev/uploaded/img_2OrJXHrjQjZoUA1eeuhGzfGkeUh.png?width=160',
-  ];
-
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
       <h2 className='mb-20 text-center text-3xl font-medium text-white'>

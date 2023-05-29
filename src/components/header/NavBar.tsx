@@ -6,13 +6,13 @@ import NavLinksList from './NavLinksList';
 import Hamburger from '../buttons/Hamburger';
 
 export const NavBar: FunctionComponent = () => {
-  // TODO: Hold user/useUser() in a client component so the nav can be a server component
-  // TODO: Loading state for auth buttons
-
   return (
     <nav className='border-b-2 border-gray-800 bg-white dark:bg-gray-900'>
       <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-8 py-4'>
-        <Link href='/' className='flex items-center'>
+        <Link
+          href='/'
+          className='flex items-center'
+        >
           <Image
             src={logo}
             className='mr-3 h-10 w-10 rounded-lg'

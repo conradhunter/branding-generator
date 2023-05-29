@@ -1,11 +1,27 @@
 'use client';
 
 import { useUser } from '@clerk/nextjs';
+import { useEffect, useState } from 'react';
 
 const DisplayCredits = () => {
   const user = useUser();
+  const [credits, setCredits] = useState<number>(0);
 
-  const credits: any = user.user?.publicMetadata.credits;
+  useEffect(() => {
+    if (user.isSignedIn) {
+      fetch('/api/db/get-users-credits', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: user.user.id }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setCredits(data.credits);
+        });
+    }
+  });
 
   if (user.isSignedIn && credits !== undefined && credits !== 0) {
     return (

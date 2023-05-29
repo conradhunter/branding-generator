@@ -84,7 +84,10 @@ const MobileNav = ({
         <Link href='/examples'>
           <li className='mb-4'>Examples</li>
         </Link>
-        <button onClick={handleBuyCredits}>
+        <button
+          className='w-fit'
+          onClick={handleBuyCredits}
+        >
           <li className='mb-4'>Buy Credits</li>
         </button>
       </ul>

@@ -5,6 +5,8 @@ const nextConfig = {
     DALL_E_API_KEY: process.env.DALL_E_API_KEY,
     OPEN_AI_ORGANISATION: process.env.OPEN_AI_ORGANISATION,
 
+    DATABASE_URL: process.env.DATABASE_URL,
+
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
     CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
