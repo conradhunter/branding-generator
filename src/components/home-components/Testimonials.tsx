@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { testimonial } from '~/lib/types/types';
 
 const Testimonials = () => {
+  // TODO: get real reviews
   const testimonialsData: testimonial[] = [
     // FAKE DATA
     {
