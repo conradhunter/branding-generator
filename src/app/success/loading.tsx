@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import loading2 from '../../public/loading_undraw_2.svg';
+import loading2 from '../../../public/loading_undraw_2.svg';
 
 const loading = () => {
   return (
