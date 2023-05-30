@@ -12,6 +12,7 @@ const DownloadButton = ({ logoImageUrl }: DownloadButtonProps) => {
     <a
       href={logoImageUrl!}
       target='_blank'
+      download={logoImageUrl!}
     >
       <button className='absolute right-4 top-4 z-10 cursor-pointer text-slate-300 duration-200 hover:text-slate-100'>
         <FileDownloadIcon />
