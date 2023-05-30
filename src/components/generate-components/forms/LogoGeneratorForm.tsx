@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import Label from '../form-inputs/Label';
 import InputText from '../form-inputs/InputText';
 import Select from '../form-inputs/Select';
@@ -54,8 +54,23 @@ const LogoGeneratorForm = () => {
   };
 
   const user = useUser();
+  const [credits, setCredits] = useState();
 
-  const credits = user.user?.publicMetadata.credits || 0;
+  useEffect(() => {
+    if (user.isSignedIn) {
+      fetch('https://brandinggeneratorai.com/api/db/get-users-credits', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: user.user.id }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setCredits(data.credits);
+        });
+    }
+  }, [user]);
 
   const canGenerate =
     user.isSignedIn && typeof credits === 'number' && credits >= 5;
