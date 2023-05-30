@@ -3,7 +3,10 @@ import React from 'react';
 import BuyCreditsLink from '~/components/buttons/BuyCreditsLink';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import SloganGeneratorForm from '~/components/generate-components/forms/SloganGeneratorForm';
-import { handleBuyCredits } from '~/lib/stripe';
+
+export const metadata = {
+  title: 'Generate Slogan',
+};
 
 const SloganGeneratorPage: NextPage = () => {
   return (

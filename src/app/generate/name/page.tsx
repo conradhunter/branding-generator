@@ -3,7 +3,10 @@ import React from 'react';
 import BuyCreditsLink from '~/components/buttons/BuyCreditsLink';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import NameGenerateForm from '~/components/generate-components/forms/NameGenerateForm';
-import { handleBuyCredits } from '~/lib/stripe';
+
+export const metadata = {
+  title: 'Generate Name',
+};
 
 const NameGeneratorPage: NextPage = () => {
   return (

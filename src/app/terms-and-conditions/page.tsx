@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const metadata = {
+  title: 'Terms & Conditions',
+};
+
 const page = () => {
   return (
     <section className='px-[15%] py-20'>

@@ -3,6 +3,10 @@ import BuyCreditsLink from '~/components/buttons/BuyCreditsLink';
 import DisplayCredits from '~/components/generate-components/DisplayCredits';
 import LogoGeneratorForm from '~/components/generate-components/forms/LogoGeneratorForm';
 
+export const metadata = {
+  title: 'Generate Logo',
+};
+
 const LogoGeneratePage: NextPage = () => {
   return (
     <main className='mx-auto w-[70%] max-w-4xl py-20'>
