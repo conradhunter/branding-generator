@@ -60,8 +60,8 @@ const Features = () => {
                 Affordable Prices
               </h3>
               <p className='mb-2 text-gray-100'>
-                We provide the most credits compared to other icon generator
-                services. Don&apos;t get scammed paying $10 for 10 credits.
+                We provide the most credits compared to other generator
+                services.
               </p>
             </div>
           </div>

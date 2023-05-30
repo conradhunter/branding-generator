@@ -59,6 +59,7 @@ const SloganGeneratorForm = () => {
           <Label content={'Product or Service'} />
           <InputText
             value={logoPromptData.productOrService}
+            placeholder='e.g clothing'
             onChange={(event) => handleInputChange(event, 'productOrService')}
           />
         </div>
@@ -66,6 +67,7 @@ const SloganGeneratorForm = () => {
           <Label content={'Keyword'} />
           <InputText
             value={logoPromptData.keyWord}
+            placeholder='e.g affordable streetwear'
             onChange={(event) => handleInputChange(event, 'keyWord')}
           />
         </div>

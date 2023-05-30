@@ -15,7 +15,6 @@ export const NavBar: FunctionComponent = () => {
         >
           <Image
             src={logo}
-            placeholder='blur'
             className='mr-3 h-10 w-10 rounded-lg'
             alt='Flowbite Logo'
           />

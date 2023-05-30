@@ -11,7 +11,6 @@ const loading = () => {
           src={loading2}
           alt='Coming soon...'
           width={300}
-          placeholder='blur'
           height={300}
         />
       </div>

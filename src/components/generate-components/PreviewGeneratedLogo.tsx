@@ -43,7 +43,6 @@ const PreviewGeneratedLogo = ({ logoImageUrl }: PreviewGeneratedLogoProps) => {
             <Image
               src={logoImageUrl!}
               alt='Generated logo'
-              placeholder='blur'
               width={208}
               height={208}
               className='rounded-xl shadow-md'

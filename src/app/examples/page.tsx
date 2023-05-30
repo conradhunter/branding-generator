@@ -13,7 +13,6 @@ const ExamplesPage: NextPage = () => {
         <Image
           src={loading}
           alt='Coming soon...'
-          placeholder='blur'
           width={300}
           height={300}
         />
