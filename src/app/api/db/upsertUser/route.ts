@@ -11,7 +11,7 @@ export async function POST(req: any) {
   const email = user?.emailAddresses[0].emailAddress;
 
   const newUser = await prisma.user.upsert({
-    where: { id: userId?.toString() }, // Choose either `id` or `email` as the unique identifier, not both.
+    where: { id: userId }, // Choose either `id` or `email` as the unique identifier, not both.
     update: { email: email }, // This remains empty because we want to do nothing if the user exists.
     create: {
       id: userId?.toString(),
