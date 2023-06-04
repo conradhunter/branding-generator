@@ -38,7 +38,7 @@ const page = () => {
           <p className='mb-6 mt-2 text-gray-100'>
             Having trouble? Please contact us at our{' '}
             <Link
-              href='/contact'
+              href='mailto:support@brandinggenerator.com'
               className='underline'
             >
               support

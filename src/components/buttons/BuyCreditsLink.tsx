@@ -1,16 +1,23 @@
 'use client';
 
+import { useUser } from '@clerk/nextjs';
 import { handleBuyCredits } from '~/lib/stripe';
 
 const BuyCreditsLink = () => {
-  return (
-    <button
-      onClick={handleBuyCredits}
-      className='underline'
-    >
-      Buy Credits
-    </button>
-  );
+  const { user } = useUser();
+
+  if (user) {
+    return (
+      <button
+        onClick={handleBuyCredits}
+        className='underline'
+      >
+        Buy Credits
+      </button>
+    );
+  } else {
+    return;
+  }
 };
 
 export default BuyCreditsLink;
