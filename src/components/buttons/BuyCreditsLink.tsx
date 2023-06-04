@@ -16,7 +16,7 @@ const BuyCreditsLink = () => {
       </button>
     );
   } else {
-    return;
+    return <span> </span>;
   }
 };
 
